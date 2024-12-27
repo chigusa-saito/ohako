@@ -1683,6 +1683,36 @@ input:-internal-autofill-selected {
   }
 }
 
+input[type="checkbox"]{
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: middle;
+  background-color: var(--gray-color);
+  transition: all .2s;
+
+
+  & + span{
+    padding-left: .8rem;
+  }
+
+  &:checked::after{
+    appearance: auto !important;
+    position: absolute;
+    content: '';
+    top: .2rem;
+    left: .8rem;
+    transform: rotate(50deg);
+    width: .7rem;
+    height: 1.6rem;
+    border-right: 3px solid var(--text-color);
+    border-bottom: 3px solid var(--text-color);
+    z-index: 1;
+    transition: all .2s;
+  }
+}
+
+
 /* select */
 .selectBox{
   position: relative;
