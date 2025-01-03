@@ -19,7 +19,7 @@ function add_custom_fields(){
   if ($post_id == get_page_id('top')){
    add_meta_box(
       'custom_field_01', //セクションのID
-      '店舗住所', //セクションのタイトル
+      'テキスト', //セクションのタイトル
       'insert_custom_fields', //フォーム部分を指定する関数
       'page', //投稿タイプの場合は「post」、カスタム投稿タイプの場合は「スラッグ名」、固定ページの場合は「page」
       'normal', //セクションの表示場所
@@ -44,10 +44,10 @@ echo '
 <table class="custom-fields">
   <tr class="border-top border-bottom">
      <th scope="row">
-       <label for="shop_a">店舗A</label>
+       <label for="catchcopy">キャッチコピー</label>
      </th>
      <td> 
-       <input type="text" id="shop_a" name="shop_a" value="'.get_post_meta($post_id, 'shop_a', true).'" />
+       <input type="text" id="catchcopy" name="catchcopy" value="'.get_post_meta($post_id, 'catchcopy', true).'" />
      </td>
    </tr>
    <tr class="border-bottom">
@@ -79,7 +79,7 @@ function save_custom_fields( $post_id ){
    if (!wp_verify_nonce($_POST['custom_field_meta_box_nonce'], 'custom_field_save_meta_box_data')) {
     return;
    }
-  $key = 'shop_a'; if(!empty($_POST[$key])){update_post_meta($post_id,'$key',$_POST[$key]);}else{delete_post_meta($post_id,'$key');}
+  $key = 'catchcopy'; if(!empty($_POST[$key])){update_post_meta($post_id,'$key',$_POST[$key]);}else{delete_post_meta($post_id,'$key');}
   $key = 'shop_b'; if(!empty($_POST[$key])){update_post_meta($post_id,'$key',$_POST[$key]);}else{delete_post_meta($post_id,'$key');}
   $key = 'shop_c'; if(!empty($_POST[$key])){update_post_meta($post_id,'$key',$_POST[$key]);}else{delete_post_meta($post_id,'$key');}
 }
