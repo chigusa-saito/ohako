@@ -36,7 +36,7 @@ function get_page_id($post_name)
   return esc_html($id);
 }
 //カスタムフィールドの入力エリア
-function insert_shop_fields() {
+function insert_custom_fields() {
   global $post;
   //nounceフィールドの追加
   wp_nonce_field('custom_field_save_meta_box_data', 'custom_field_meta_box_nonce');
