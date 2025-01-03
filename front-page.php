@@ -10,12 +10,20 @@
 <body <?php body_class(); ?>>
 
   <?php get_template_part('template-parts/site-header'); ?>
+  <?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post(); ?>
 
   <main>
   <!-- MV -->
   <section class="mv">
     <div class="mv_title">
-      <h2>みんな<span>の</span><br>十八番<span>が</span><br>集まる場所。</h2>
+      <h2>
+        <?php
+        $post_id = get_the_ID(); //ページのIDを取得
+        echo esc_html(get_post_meta($post_id, 'catchcopy', true));
+        ?>
+      </h2>
+      <!-- <h2>みんな<span>の</span><br>十八番<span>が</span><br>集まる場所。</h2> -->
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObject.svg" alt="mapObject" loading="lazy" width="" height="" class="mapObject">
     </div>
     <div class="mv_graphic">
@@ -33,6 +41,8 @@
     </div>
   </section>
   <!-- /MV -->
+  <?php endwhile; ?>
+        <?php endif; ?>
 
   <!-- event -->
   <section class="event">

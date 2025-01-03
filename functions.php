@@ -42,30 +42,11 @@ function insert_custom_fields() {
   wp_nonce_field('custom_field_save_meta_box_data', 'custom_field_meta_box_nonce');
 echo '
 <table class="custom-fields">
-  <tr class="border-top border-bottom">
-     <th scope="row">
-       <label for="catchcopy">キャッチコピー</label>
-     </th>
-     <td> 
-       <input type="text" id="catchcopy" name="catchcopy" value="'.get_post_meta($post_id, 'catchcopy', true).'" />
-     </td>
-   </tr>
-   <tr class="border-bottom">
-      <th scope="row">
-        <label for="shop_b">店舗B</label>
-      </th>
-      <td> 
-        <input type="text" id="shop_b" name="shop_b" value="'.get_post_meta($post_id, 'shop_b', true).'" />
-      </td>
-   </tr>
-   <tr class="border-bottom">
-   <th scope="row">
-     <label for="shop_c">店舗C</label>
-   </th>
-   <td> 
-     <input type="text" id="shop_c" name="shop_c" value="'.get_post_meta($post_id, 'shop_c', true).'" />
-   </td>
-</tr>
+  <tr>
+    <td>キャッチコピー</td>
+    <td><input type="text" name="catchcopy" value="'.get_post_meta($post->ID, 'catchcopy', true).'" size="50" /></td>
+  </tr>
+
 </table>
 ';
 }
@@ -79,8 +60,7 @@ function save_custom_fields( $post_id ){
    if (!wp_verify_nonce($_POST['custom_field_meta_box_nonce'], 'custom_field_save_meta_box_data')) {
     return;
    }
-  $key = 'catchcopy'; if(!empty($_POST[$key])){update_post_meta($post_id,'$key',$_POST[$key]);}else{delete_post_meta($post_id,'$key');}
-  $key = 'shop_b'; if(!empty($_POST[$key])){update_post_meta($post_id,'$key',$_POST[$key]);}else{delete_post_meta($post_id,'$key');}
-  $key = 'shop_c'; if(!empty($_POST[$key])){update_post_meta($post_id,'$key',$_POST[$key]);}else{delete_post_meta($post_id,'$key');}
+  if (isset($_POST['catchcopy'])) { $data = sanitize_text_field($_POST['catchcopy']); update_post_meta($post_id, 'catchcopy', $data); }
+
 }
 add_action('save_post', 'save_custom_fields');
