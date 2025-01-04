@@ -7,8 +7,6 @@ add_theme_support( 'post-thumbnails' );
 // カスタムフィールド
 
 
-
-
 // カスタムフィールド：TOPページ
 //カスタムフィールドのメタボックス
 function add_custom_fields(){
@@ -198,28 +196,35 @@ add_action('save_post', 'save_custom_fields03');
 
 // 画像のカスタムフィールド
 
-function add_custom_fields() {
+function add_custom_fields_i01() {
   add_meta_box(
   'posttype_setting', //編集画面セクションのHTML ID
-  'カスタム投稿', //編集画面セクションのタイトル、画面上に表示される
-  'insert_custom_fields', //編集画面セクションにHTML出力する関数
-  'posttype_name', //投稿タイプ名
+  '画像', //編集画面セクションのタイトル、画面上に表示される
+  'insert_custom_fields_i01', //編集画面セクションにHTML出力する関数
+  'page', //投稿タイプ名
   'normal' //編集画面セクションが表示される部分
   );
   }
-  add_action( 'admin_menu', 'add_custom_fields' );
+  add_action( 'admin_menu', 'add_custom_fields_i01' );
   //画像をアップする時は下記の記述が必要。
   function custom_metabox_edit_form_tag() {
   echo ' enctype="multipart/form-data"';
   }
   add_action( 'post_edit_form_tag', 'custom_metabox_edit_form_tag' );
   // カスタムフィールドの入力エリア
-  function insert_custom_fields() {
+  function insert_custom_fields_i01() {
   global $post;
-  $custom_img = get_post_meta( $post->ID, 'custom_img', true );
-  echo '<h3>画像</h3><input type="file" style="width:100%;" name="custom_img" accept="image/*" /><br>';
+  $custom_img = get_post_meta( $post_id, 'custom_img', true );
+  echo '
+  <table class="custom-fields">
+  <tr>
+    <td>場所</td>
+    <td><input type="file" style="width:100%;" name="custom_img" accept="image/*" /><br>';
   if ( isset( $custom_img ) && strlen( $custom_img ) > 0 ) {
-  echo '<img style="width: 200px;display: block;margin: 1em;" src="' . wp_get_attachment_url( $custom_img ) . '">';
+  echo '<img style="width: 200px;display: block;margin: 1em;" src="' . wp_get_attachment_url( $custom_img ) . '"></td>
+  </tr>
+</table>
+  ';
   }
   }
   //カスタムフィールドの値を保存

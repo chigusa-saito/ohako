@@ -16,12 +16,18 @@
       <h2>
         <?php
         $post_id = get_the_ID(); //ページのIDを取得
-        echo post_custom('catchcopy');
-        // echo esc_html(get_post_meta($post_id, 'catchcopy', true));
+        // echo post_custom('catchcopy');
+        echo esc_html(get_post_meta($post_id, 'catchcopy', true));
         ?>
       </h2>
       <!-- <h2>みんな<span>の</span><br>十八番<span>が</span><br>集まる場所。</h2> -->
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObject.svg" alt="mapObject" loading="lazy" width="" height="" class="mapObject">
+      <?php
+        $post_id = get_the_ID(); //ページのIDを取得
+        // echo post_custom('custom_img');
+         echo '<img style="width: 200px;display: block;margin: 1em;" src=" . wp_get_attachment_url( $custom_img ) . ">';
+        ?>
+
+      <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObject.svg" alt="mapObject" loading="lazy" width="" height="" class="mapObject"> -->
     </div>
     <div class="mv_graphic">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/mvGraphic_sp.jpg" alt="mv" loading="lazy" width="" height="" class="disp_sp">
