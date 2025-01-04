@@ -108,7 +108,6 @@ echo '
     <td>本文</td>
     <td><input type="text" name="bodytext" value="'.get_post_meta($post->ID, 'bodytext', true).'" size="50" /></td>
   </tr>
-
 </table>
 ';
 }
@@ -195,3 +194,74 @@ function save_custom_fields03( $post_id ){
 
 }
 add_action('save_post', 'save_custom_fields03');
+
+
+// 画像のカスタムフィールド
+
+function add_custom_fields() {
+  add_meta_box(
+  'posttype_setting', //編集画面セクションのHTML ID
+  'カスタム投稿', //編集画面セクションのタイトル、画面上に表示される
+  'insert_custom_fields', //編集画面セクションにHTML出力する関数
+  'posttype_name', //投稿タイプ名
+  'normal' //編集画面セクションが表示される部分
+  );
+  }
+  add_action( 'admin_menu', 'add_custom_fields' );
+  //画像をアップする時は下記の記述が必要。
+  function custom_metabox_edit_form_tag() {
+  echo ' enctype="multipart/form-data"';
+  }
+  add_action( 'post_edit_form_tag', 'custom_metabox_edit_form_tag' );
+  // カスタムフィールドの入力エリア
+  function insert_custom_fields() {
+  global $post;
+  $custom_img = get_post_meta( $post->ID, 'custom_img', true );
+  echo '<h3>画像</h3><input type="file" style="width:100%;" name="custom_img" accept="image/*" /><br>';
+  if ( isset( $custom_img ) && strlen( $custom_img ) > 0 ) {
+  echo '<img style="width: 200px;display: block;margin: 1em;" src="' . wp_get_attachment_url( $custom_img ) . '">';
+  }
+  }
+  //カスタムフィールドの値を保存
+  function save_slider_fields( $post_id ) {
+  if ( isset( $_FILES[ 'custom_img' ] ) && $_FILES[ "custom_img" ][ "size" ] !== 0 ) {
+  $file_name = basename( $_FILES[ 'custom_img' ][ 'name' ] );
+  $file_name = trim( $file_name );
+  $file_name = str_replace( " ", "-", $file_name );
+  $wp_upload_dir = wp_upload_dir(); //現在のuploadディクレトリのパスとURLを入れた配列
+  $upload_file = $_FILES[ 'custom_img' ][ 'tmp_name' ];
+  $upload_path = $wp_upload_dir[ 'path' ] . '/' . $file_name; //uploadsディレクトリ以下などに配置する場合は$wp_upload_dir['basedir']を利用する
+  //画像ファイルをuploadディクレトリに移動させる
+  move_uploaded_file( $upload_file, $upload_path );
+  $file_type = $_FILES[ 'custom_img' ][ 'type' ];
+  //正規表現で拡張子なしのスラッグ名を生成
+  $slug_name = preg_replace( '/\.[^.]+$/', '', basename( $upload_path ) );
+  if ( file_exists( $upload_path ) ) {
+  //保存に成功してファイルが存在する場合は、wp_postsテーブルなどに情報を追加
+  $attachment = array(
+  'guid' => $wp_upload_dir[ 'url' ] . '/' . basename( $file_name ),
+  'post_mime_type' => $file_type,
+  //'post_title' => $slug_name,
+  'post_content' => '',
+  'post_status' => 'inherit'
+  );
+  //添付ファイルを追加
+  $attach_id = wp_insert_attachment( $attachment, $upload_path, $post_id );
+  if ( !function_exists( 'wp_generate_attachment_metadata' ) ) {
+  require_once( ABSPATH . "wp-admin" . '/includes/image.php' );
+  }
+  //添付ファイルのメタデータを生成し、wp_postsテーブルに情報を保存
+  $attach_data = wp_generate_attachment_metadata( $attach_id, $upload_path );
+  wp_update_attachment_metadata( $attach_id, $attach_data );
+  //wp_postmetaテーブルに画像のattachment_id(wp_postsテーブルのレコードのID)を保存
+  update_post_meta( $post_id, 'custom_img', $attach_id );
+  } else {
+  //保存失敗
+  echo '画像保存に失敗しました';
+  exit;
+  }
+  }
+  }
+  add_action( 'save_post', 'save_slider_fields' );
+  
+  
