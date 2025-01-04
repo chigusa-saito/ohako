@@ -28,11 +28,19 @@
                 </div>
               </div>
               <p>
+                <?php
+                $post_id = get_page_id03('information'); //ページのIDを取得
+                echo esc_html(get_post_meta($post_id, 'bodytext1', true));
+                ?>
+              </p>
+              <small>※飲食店営業許可を取っています。</small><br>
+              <small>※提供する内容によっては別途保健所の許可が必要です。</small>
+              <!-- <p>
                 駅前に小さなお店を出す。<br>
                 誰でも気軽にチャレンジできるOHAKOYAは皆さんのやりたいことを応援します。
               </p>
               <small>※飲食店営業許可を取っています。</small><br>
-              <small>※提供する内容によっては別途保健所の許可が必要です。</small>
+              <small>※提供する内容によっては別途保健所の許可が必要です。</small> -->
             </div>
           </div>
           <div class="secondary">
@@ -46,9 +54,15 @@
                 </div>
               </div>
               <p>
+                <?php
+                $post_id = get_page_id03('information'); //ページのIDを取得
+                echo esc_html(get_post_meta($post_id, 'bodytext2', true));
+                ?>
+              </p>
+              <!-- <p>
                 季節によっては、ラグを広げて日向ぼっこなんていうのも良いかもしれません。ライブなどのステージにも。<br>
                 使い方は、皆さんのアイデア次第。
-              </p>
+              </p> -->
             </div>
           </div>
         </div>
@@ -62,7 +76,13 @@
                 <p class="alphabet">OHAKO YARD</p>
               </div>
             </div>
-            <p>無人販売所を使ったり、キッチンカーを出店したりイベントを実施したり、みんなで楽しくマルシェを開催したり。駅前立地を活用してみてください。</p>
+            <p>
+              <?php
+              $post_id = get_page_id03('information'); //ページのIDを取得
+              echo esc_html(get_post_meta($post_id, 'bodytext3', true));
+              ?>
+            </p>
+            <!-- <p>無人販売所を使ったり、キッチンカーを出店したりイベントを実施したり、みんなで楽しくマルシェを開催したり。駅前立地を活用してみてください。</p> -->
           </div>
         </div>
       </div>

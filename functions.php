@@ -137,7 +137,7 @@ function add_custom_fields03(){
   if(isset($_GET['post']) || isset($_POST['post_ID'])) {
     $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
   }
-  if ($post_id == get_page_id03('about')){
+  if ($post_id == get_page_id03('information')){
    add_meta_box(
       'custom_field_03', //セクションのID
       'テキスト', //セクションのタイトル
@@ -164,12 +164,16 @@ function insert_custom_fields03() {
 echo '
 <table class="custom-fields">
   <tr>
-    <td>サブタイトル</td>
-    <td><input type="text" name="subtitle" value="'.get_post_meta($post->ID, 'subtitle', true).'" size="50" /></td>
+    <td>オハコヤ</td>
+    <td><input type="text" name="bodytext1" value="'.get_post_meta($post->ID, 'bodytext1', true).'" size="50" /></td>
   </tr>
   <tr>
-    <td>本文</td>
-    <td><input type="text" name="bodytext" value="'.get_post_meta($post->ID, 'bodytext', true).'" size="50" /></td>
+    <td>オハコ デッキ</td>
+    <td><input type="text" name="bodytext2" value="'.get_post_meta($post->ID, 'bodytext2', true).'" size="50" /></td>
+  </tr>
+  <tr>
+    <td>オハコ ヤード</td>
+    <td><input type="text" name="bodytext3" value="'.get_post_meta($post->ID, 'bodytext3', true).'" size="50" /></td>
   </tr>
 
 </table>
@@ -185,8 +189,9 @@ function save_custom_fields03( $post_id ){
    if (!wp_verify_nonce($_POST['custom_field_meta_box_nonce03'], 'custom_field_save_meta_box_data')) {
     return;
    }
-  if (isset($_POST['subtitle'])) { $data = sanitize_text_field($_POST['subtitle']); update_post_meta($post_id, 'subtitle', $data); }
-  if (isset($_POST['bodytext'])) { $data = sanitize_text_field($_POST['bodytext']); update_post_meta($post_id, 'bodytext', $data); }
+  if (isset($_POST['bodytext1'])) { $data = sanitize_text_field($_POST['bodytext1']); update_post_meta($post_id, 'bodytext1', $data); }
+  if (isset($_POST['bodytext2'])) { $data = sanitize_text_field($_POST['bodytext2']); update_post_meta($post_id, 'bodytext2', $data); }
+  if (isset($_POST['bodytext3'])) { $data = sanitize_text_field($_POST['bodytext3']); update_post_meta($post_id, 'bodytext3', $data); }
 
 }
 add_action('save_post', 'save_custom_fields03');
