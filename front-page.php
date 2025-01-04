@@ -9,10 +9,6 @@
 
 <body <?php body_class(); ?>>
 
-  <?php get_template_part('template-parts/site-header'); ?>
-  <?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post(); ?>
-
   <main>
   <!-- MV -->
   <section class="mv">
@@ -20,7 +16,8 @@
       <h2>
         <?php
         $post_id = get_the_ID(); //ページのIDを取得
-        echo esc_html(get_post_meta($post_id, 'catchcopy', true));
+        echo post_custom('catchcopy');
+        // echo esc_html(get_post_meta($post_id, 'catchcopy', true));
         ?>
       </h2>
       <!-- <h2>みんな<span>の</span><br>十八番<span>が</span><br>集まる場所。</h2> -->
@@ -41,8 +38,6 @@
     </div>
   </section>
   <!-- /MV -->
-  <?php endwhile; ?>
-        <?php endif; ?>
 
   <!-- event -->
   <section class="event">
@@ -57,108 +52,11 @@
   </section>
   <!-- /event -->
 
-  <!-- about -->
-  <section class="about">
-    <div class="topArea">
-      <div class="titleArea">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_topImage.jpg" alt="OHAKO" loading="lazy" width="" height="" class="about_topImage">
-        <h2><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">とは…</h2>
-      </div>
-      <div class="textArea">
-        <div class="wrapper">
-          <h3>瑞穂町に新しいコンセプトで誕生した町の施設、OHAKO BASE（オハコベース）</h3>
-          <p>
-            カフェをやってみたい、お弁当を販売したい、お料理を広めたい、自社商品のPRとして自分で作った雑貨を販売してみたい。<br>
-            商品の意見をたくさんの人に聞いてみたい。自分のお店のサテライトショップとして使いたい。みんなで楽しくマルシェをやりたい。<br>
-            アロマやヨガのスクールをやってみたい。読書会やサークル活動をやりたいなど。
-          </p>
-          <p>皆さんのやりたいこと、やってみたいことを実現するOHAKO BASEで、一緒に瑞穂町を盛り上げてみませんか？</p>
-        </div>
-        <div class="imageArea1">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObjectMizuho.svg" alt="Mizuho is Here!" loading="lazy" width="" height="" class="mapObjectMizuho">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_image1.jpg" alt="" loading="lazy" width="" height="" class="image1">
-        </div>
-      </div>
-    </div>
-    <div class="imageArea2">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_image2.jpg" alt="" loading="lazy" width="" height="" class="image2">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_image3.jpg" alt="" loading="lazy" width="" height="" class="image3">
-    </div>
-    <div class="cvAreaWrapper">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_cvImage.jpg" alt="" loading="lazy" width="" height="" class="cvImage">
-      <div class="cvArea">
-        あなたも<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">で<br>
-        <span>出店してみませんか？</span>
-        <a href="">お申し込みはこちら ▶︎</a>
-      </div>
-    </div>
-  </section>
-  <!-- /about -->
+  <!-- aboutページを挿入 -->
+  <?php get_template_part( 'page-about'); ?>
 
-  <!-- information -->
-  <section class="information">
-    <div class="section_title">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logoSimbol.png" alt="" loading="lazy" width="30" height="30">
-      <span>Information</span>
-      <h2>施設情報</h2>
-    </div>
-    <div class="allMap">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_sp.png" alt="全体図" loading="lazy" width="" height="" class="disp_sp">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_pc.png" alt="全体図" loading="lazy" width="" height="" class="disp_pc">
-      <div class="list">
-        <div class="right">
-          <div class="primary">
-            <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail1.png" alt="オハコヤ" loading="lazy" width="" height=""></div>
-            <div>
-              <div class="listNoWrapper">
-                <div class="listNo">1</div>
-                <div class="listItem">
-                  <p class="japanese">オハコヤ</p>
-                  <p class="alphabet">OHAKOYA</p>
-                </div>
-              </div>
-              <p>
-                駅前に小さなお店を出す。<br>
-                誰でも気軽にチャレンジできるOHAKOYAは皆さんのやりたいことを応援します。
-              </p>
-              <small>※飲食店営業許可を取っています。</small><br>
-              <small>※提供する内容によっては別途保健所の許可が必要です。</small>
-            </div>
-          </div>
-          <div class="secondary">
-            <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail2.png" alt="オハコ デッキ" loading="lazy" width="" height=""></div>
-            <div>
-              <div class="listNoWrapper">
-                <div class="listNo">2</div>
-                <div class="listItem">
-                  <p class="japanese">オハコ デッキ</p>
-                  <p class="alphabet">OHAKO DECK</p>
-                </div>
-              </div>
-              <p>
-                季節によっては、ラグを広げて日向ぼっこなんていうのも良いかもしれません。ライブなどのステージにも。<br>
-                使い方は、皆さんのアイデア次第。
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="tertiary left">
-          <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail3.png" alt="オハコ ヤード" loading="lazy" width="" height=""></div>
-          <div>
-            <div class="listNoWrapper">
-              <div class="listNo">3</div>
-              <div class="listItem">
-                <p class="japanese">オハコ ヤード</p>
-                <p class="alphabet">OHAKO YARD</p>
-              </div>
-            </div>
-            <p>無人販売所を使ったり、キッチンカーを出店したりイベントを実施したり、みんなで楽しくマルシェを開催したり。駅前立地を活用してみてください。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /information -->
+  <!-- informationページを挿入 -->
+  <?php get_template_part( 'page-information'); ?>
 
   <!-- facilities -->
   <section class="facilities wrapper">
