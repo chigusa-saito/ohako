@@ -42,14 +42,14 @@ echo '
 <table class="custom-fields">
   <tr>
     <td>キャッチコピー</td>
-    <td><textarea name="catchcopy" cols="60" rows="5" value="'.get_post_meta($post->ID, 'catchcopy', true).'" size="50"></textarea></td>
+    <td><textarea name="catchcopy" cols="60" rows="5" value="'.get_post_meta($post->ID, 'catchcopy', true).'" size="50">'.get_post_meta($post->ID, 'catchcopy', true).'</textarea></td>
   </tr>
 
 </table>
 ';
 }
 //カスタムフィールドの値を保存
-function save_custom_fields( $post_id ){
+function save_custom_fields01( $post_id ){
   //nonceがセットされているか確認
   if (!isset($_POST['custom_field_meta_box_nonce'])) {
    return;
@@ -61,7 +61,7 @@ function save_custom_fields( $post_id ){
   if (isset($_POST['catchcopy'])) { $data = sanitize_text_field($_POST['catchcopy']); update_post_meta($post_id, 'catchcopy', $data); }
 
 }
-add_action('save_post', 'save_custom_fields');
+add_action('save_post', 'save_custom_fields01');
 
 
 
