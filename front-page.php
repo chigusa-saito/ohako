@@ -16,8 +16,8 @@
       <h2>
         <?php
         $post_id = get_the_ID(); //ページのIDを取得
-        echo post_custom('catchcopy');
-        // echo esc_html(get_post_meta($post_id, 'catchcopy', true));
+        // echo post_custom('catchcopy');
+        echo esc_html(get_post_meta($post_id, 'catchcopy', true));
         ?>
       </h2>
       <!-- <h2>みんな<span>の</span><br>十八番<span>が</span><br>集まる場所。</h2> -->
