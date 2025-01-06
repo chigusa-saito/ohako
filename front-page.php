@@ -8,7 +8,7 @@
 <?php get_header(); ?>
 
 <body <?php body_class(); ?>>
-  
+
 <?php get_template_part('template-parts/site-header'); ?>
 
   <main>
@@ -173,15 +173,6 @@
               <div class="item_info">
                 <h4><?php the_field('space1');?></h4>
                 <?php the_field('ohakoya_item1');?>
-
-                <!-- <li>IHコンロ1つ</li>
-                <li>シンク２つ</li>
-                <li>電気</li>
-                <li>水道</li>
-                <li>層式冷蔵庫２個</li>
-                <li>層式冷凍庫１個</li>
-                <li>コンセント１口</li>
-                <li>商品提供用小窓２個</li> -->
               </div>
             </li>
             <li>
@@ -189,12 +180,6 @@
               <div class="item_info">
                 <h4><?php the_field('space2');?></h4>
                 <?php the_field('ohakoya_item2');?>
-
-                <!-- <li>４人掛けテーブル</li>
-                <li>２人掛けカウンタ</li>
-                <li>靴入れ（６人分）</li>
-                <li>Wi-Fi</li>
-                <li>トイレ</li> -->
               </div>
             </li>
             <?php if(get_field('ohakoya_image3') ): ?>
@@ -203,12 +188,6 @@
               <div class="item_info">
                 <h4><?php the_field('space3');?></h4>
                 <?php the_field('ohakoya_item3');?>
-
-                <!-- <li>４人掛けテーブル</li>
-                <li>２人掛けカウンタ</li>
-                <li>靴入れ（６人分）</li>
-                <li>Wi-Fi</li>
-                <li>トイレ</li> -->
               </div>
             </li>
             <?php else: ?>
@@ -228,8 +207,6 @@
             <img src="<?php the_field('ohakodeck_image');?>" alt="" class="facilitiesImage">
               <div class="item_info">
                 <?php the_field('ohakodeck_item');?>
-                <!-- <li>電気（業務用ではありません）</li>
-                <li>ドラムコード</li> -->
               </div>
             </li>
           </ul>
