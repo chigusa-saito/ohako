@@ -563,6 +563,15 @@ section.event{
   padding-top: 4rem;
   padding-bottom: 9rem;
   background-color: var(--primary-color);
+
+  .googlecalendar{
+    display: block;
+
+    iframe{
+      width: 100%;
+      height: 30rem;
+    }
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -587,6 +596,17 @@ section.event{
       margin-top: -3rem;
       margin-left: 1.5rem;
     }
+
+    .googlecalendar{
+      display: block;
+      padding-left: 6rem;
+      padding-bottom: 5rem;
+
+      iframe{
+        width: 100%;
+        height: auto;
+      }
+    }  
   }
 }
 
@@ -1279,6 +1299,10 @@ section.information{
     &:first-of-type{
       padding-top: 0;
     }
+
+    li{
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -1304,7 +1328,7 @@ section.information{
       font-size: max(1.4rem, 14px);
       }
 
-    ol{
+    li{
       font-size: max(1.4rem, 14px);
     }
   }

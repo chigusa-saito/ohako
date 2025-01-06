@@ -42,7 +42,8 @@
         <span>Event</span>
         <h2>イベントのお知らせ</h2>
       </div>
-      <!-- google calender -->
+      <div class="googlecalendar"><iframe src="https://calendar.google.com/calendar/embed?height=607&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&src=b2hha29iYXNlQGdtYWlsLmNvbQ&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%230B8043" style="border-width:0" width="811" height="607" frameborder="0" scrolling="no"></iframe></div>
+        <!-- google calender -->
     </div>
   </section>
   <!-- /event -->
@@ -53,189 +54,14 @@
   <!-- informationページを挿入 -->
   <?php get_template_part( 'page-information'); ?>
 
-  <!-- facilities -->
-  <section class="facilities wrapper">
-    <h2>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/facilities_decorationLeft.svg" alt=""><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO" class="logo">
-      <span>の</span>設備<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/facilities_decorationRight.svg" alt="">
-    </h2>
-    <ul>
-      <li class="primary">
-        <div class="title">
-          <h3>
-            オハコヤ
-          </h3>
-          <span>OHAKOYA</span>
-        </div>
-        <div class="spaceListWrapper">
-          <ul class="spaceList">
-            <li>
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/ohakoya_image1.png" alt="" class="facilitiesImage">
-              <div>
-                <h4>キッチンスペース</h4>
-                <ul class="itemList">
-                  <li>IHコンロ1つ</li>
-                  <li>シンク２つ</li>
-                  <li>電気</li>
-                  <li>水道</li>
-                  <li>層式冷蔵庫２個</li>
-                  <li>層式冷凍庫１個</li>
-                  <li>コンセント１口</li>
-                  <li>商品提供用小窓２個</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/ohakoya_image2.png" alt="" class="facilitiesImage">
-              <div>
-                <h4>フリースペース</h4>
-                <ul class="itemList">
-                  <li>４人掛けテーブル</li>
-                  <li>２人掛けカウンタ</li>
-                  <li>靴入れ（６人分）</li>
-                  <li>Wi-Fi</li>
-                  <li>トイレ</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoya_deco.svg" alt="">
-        </div>
-      </li>
-      <li class="secondary">
-        <div class="title">
-          <h3>オハコ デッキ</h3>
-          <span>OHAKO DECK</span>
-        </div>
-        <div class="spaceListWrapper">
-          <ul class="spaceList">
-            <li>
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/ohakoDeck_image.png" alt="ウッドデッキ外観" class="facilitiesImage">
-              <div>
-                <ul class="itemList">
-                  <li>電気（業務用ではありません）</li>
-                  <li>ドラムコード</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoDeck_deco.svg" alt="">
-        </div>
-      </li>
-      <li class="tertiary">
-        <div class="title">
-          <h3>オハコ ヤード</h3>
-          <span>OHAKO YARD </span>
-        </div>
-        <div class="spaceListWrapper">
-          <ul class="spaceList">
-            <li>
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/ohakoYard_image.png" alt="ヤード外観" class="facilitiesImage">
-              <div>
-                <ul class="itemList">
-                  <li>無人販売所１台</li>
-                  <li>屋台２台</li>
-                  <li>人工芝（ 2m×5m×3枚）</li>
-                  <li>木の椅子10脚</li>
-                  <li>パイプ椅子40脚</li>
-                  <li>テント３張り</li>
-                  <li>ワイヤレススピーカー１個</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoYard_deco.svg" alt="">
-        </div>
-      </li>
-    </ul>
-  </section>
-  <!-- /facilities -->
+  <!-- facilitiesページを挿入 -->
+  <?php get_template_part( 'page-facilities'); ?>
 
-  <!-- disclaimer -->
-  <section class="disclaimer">
-    <div>
-      <h2>免責事項</h3>
-      <section>
-        <h3>OHAKO BASEの利用</h4>
-        <ol>
-          <li>⑴出店者は出店及び販売行為に関して発生した事故や苦情に対して全ての賠償責任を負います。</li>
-          <li>⑵ 装飾や看板の設置などは、出店者の管理責任のもと細心の注意を払い行うこと。第三者に被害があった場合、瑞穂町およびけやき出版は一切の責任を負いません。</li>
-        </ol>
-      
-        <h3>イベントへの申込み</h4>
-        <ol>
-          <li>⑴申込み内容を元に選考します。申込みされた全ての方に必ずしも参加いただけるものではございません。</li>
-      
-          <li>⑵家庭の不要物などの販売は出来ません。</li>
-      
-          <li>⑶自主的な活動をする個人、グループ、団体単位での申込みが可能です。</li>
-      
-          <li>⑷熱中症特別警戒アラート（前日午後2時頃発表）が発表された場合全ての出店を禁止致します。その際に生じる出店者の損害について瑞穂町及びけやき出版は保障及び負担を行いません。</li>
-        </ol>
-      
-        <h3>搬入搬出</h4>
-        <ol>
-          <li>⑴搬入搬出作業は、各自の責任下でおこなってください。荷運び等のお手伝いスタッフはおりません。</li>
-          <li>⑵駐車場は所定の位置に３台程度までお停めいただけます。</li>
-        </ol>
-      
-        <h3>お客様の駐車場</h4>
-        <p>５台のみ所定の位置にお停めいただけます。</p>
-      </section>
-    </div>
-  </section>
-  <!-- /disclaimer -->
+  <!-- facilitiesページを挿入 -->
+  <?php get_template_part( 'page-disclaimer'); ?>
 
-  <!-- flow -->
-  <section class="flow">
-    <div class="section_title">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logoSimbol.png" alt="" loading="lazy" width="30" height="30">
-      <span>Flow</span>
-      <h2>出店の流れ</h2>
-    </div>
-    <ol class="step">
-      <li>
-        <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/icon_calendar.svg" alt=""></div>
-        <div class="stepItem">
-          <div class="stepNo">STEP1</div>
-          <p class="stepText">希望日の空き予定を<br class="disp_sp">ご確認ください。</p>
-          <span class="badge">本サイトより行います</span>
-        </div>
-      </li>
-      <li>
-        <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/icon_find.svg" alt=""></div>
-        <div class="stepItem">
-          <div class="stepNo">STEP2</div>
-          <p class="stepText">下記【出店のお申込み】を<br class="disp_sp">ご確認ください。</p>
-          <span class="badge">本サイトより行います</span>
-        </div>
-      </li>
-      <li>
-        <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/icon_mail.svg" alt=""></div>
-        <div class="stepItem">
-          <div class="stepNo">STEP3</div>
-          <p class="stepText">出店内容の入力をして<br class="disp_sp">お申し込みください。</p>
-          <span class="badge">本サイトより行います</span>
-        </div>
-      </li>
-      <li>
-        <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/icon_send.svg" alt=""></div>
-        <div class="stepItem">
-          <div class="stepNo">STEP4</div>
-          <p class="stepText">３日前迄に<br class="disp_sp">申請書類をお送りください。</p>
-          <small>※個別にご連絡差し上げます。</small>
-        </div>
-      </li>
-      <li>
-        <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/icon_shop.svg" alt=""></div>
-        <div class="stepItem">
-          <div class="stepNo">STEP5</div>
-          <p class="stepText">出店！</p>
-        </div>
-      </li>
-    </ol>
-  </section>
-  <!-- /flow -->
+  <!-- facilitiesページを挿入 -->
+  <?php get_template_part( 'page-flow'); ?>
 
   <!-- faq -->
   <section class="faq wrapper">
