@@ -138,6 +138,7 @@ small{
   }  
 }
 
+
 /*------------------------
  * header
  ------------------------*/
@@ -441,9 +442,11 @@ nav{
   background-position: 14% 34%;
 
   h2{
+    position: relative;
     font-size: 4rem;
     font-weight: var(--font-bold);
     letter-spacing: 0.15em;
+    z-index: 2;
 
     span{
       font-size: 2.4rem;
@@ -456,6 +459,7 @@ nav{
     right: -4rem;
     width: 15.3rem;
     height: auto;
+    z-index: 1;
   }
 }
 
@@ -603,8 +607,8 @@ section.event{
       padding-bottom: 5rem;
 
       iframe{
-        width: 100%;
-        height: auto;
+        width: 81.1rem;
+        height: 60.7rem;
       }
     }  
   }
@@ -1049,7 +1053,7 @@ section.information{
     font-weight: var(--font-bold);
     text-align: center;
     margin-bottom: 1rem;
-      
+
     .logo{
       width: 12rem;
     }
@@ -1121,7 +1125,7 @@ section.information{
     }  
   }
 
-  .itemList{
+  .item_info{
     li{
       position: relative;
       padding-left: 1.7rem;
