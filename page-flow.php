@@ -14,11 +14,29 @@
     </div>
     <ol class="step">
       <li>
-        <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/icon_calendar.svg" alt=""></div>
+        <div class="step_icon">
+          <img src="
+            <?php 
+              $page_obj = get_page_by_path( 'flow' );
+              $page_id = $page_obj->ID;
+              echo the_field('icon_step1', $page_id);
+            ?>
+          " alt="">
+        </div>
         <div class="stepItem">
-          <div class="stepNo">STEP1</div>
+          <div class="stepNo">
+            STEP1
+            <?php 
+              $page_obj = get_page_by_path( 'facilities' );
+              $page_id = $page_obj->ID;
+              echo the_field('space1', $page_id);
+            ?>
+          </div>
           <p class="stepText">希望日の空き予定を<br class="disp_sp">ご確認ください。</p>
+          <?php if ( get_field( 'this_site1' ) ): ?>
           <span class="badge">本サイトより行います</span>
+          <?php else: ?>
+          <?php endif; ?>
         </div>
       </li>
       <li>
