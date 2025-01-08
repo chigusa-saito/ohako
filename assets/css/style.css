@@ -304,7 +304,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: max(7rem, 70px);
+    height: max(8rem, 80px);
     background-color: rgba(255, 255, 255, 0.7);
     padding: 1.8rem 6vw;
     z-index: 100;
@@ -366,7 +366,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 7.0rem;
+    height: 8rem;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 1.8rem 6rem;
     z-index: 100;
@@ -492,6 +492,7 @@ nav{
   background-size: 44%;
   background-repeat: no-repeat;
   background-position: 14% 34%;
+  z-index: 2;
 
   h2{
     position: relative;
@@ -1002,10 +1003,6 @@ section.information{
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 5rem;
-
-    &:last-child{
-      margin-bottom: 0;
-    }
   }
   
   .primary{
@@ -1029,6 +1026,8 @@ section.information{
   }
   
   .tertiary{
+    margin-bottom: 0;
+
     .informationMap{
       width: 15rem;
     }
@@ -1159,6 +1158,16 @@ section.information{
     .logo{
       width: 12rem;
     }
+
+    .decoration_left{
+      width: 2.3rem;
+      margin-right: 1.2rem;
+    }
+    
+    .decoration_right{
+      width: 2.3rem;
+      margin-left: 1.2rem;
+    }
   
     span{
       font-size: 1.6rem;
@@ -1276,6 +1285,16 @@ section.information{
       .logo{
         width: 22.9rem;
       }
+
+      .decoration_left{
+        width: 3.6rem;
+        margin-right: 1.5rem;
+      }
+      
+      .decoration_right{
+        width: 3.6rem;
+        margin-left: 1.5rem;
+      }  
     
       span{
         font-size: 2.8rem;
@@ -1696,6 +1715,27 @@ section.faq{
     .question{
       font-size: max(1.6rem, 16px);
     }
+
+    .answer{
+      position: relative;
+      padding-top: 0rem;
+      padding-left: 5rem;
+      margin-bottom: .4rem;
+      margin-top: 2rem;
+  
+      &::before{
+        position: absolute;
+        content: 'A';
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        font-size: 4rem;
+        font-family: var(--font-e);
+        font-weight: var(--font-semibold);
+        color: #ED5B32;
+        line-height: 1;
+      }
+    }  
   }  
 }
 
@@ -1772,6 +1812,26 @@ section.faq{
   }
 }
 
+/* error */
+.screen-reader-response{
+  color: red;
+  margin-bottom: 2rem;
+}
+
+[id^="wpcf7-f10-o1-ve-"]{
+  display: none;
+}
+
+[id^="wpcf7-f10-o1-ve-"] *{
+  display: none;
+}
+
+.wpcf7-not-valid-tip{
+  color: red;
+}
+/* /error */
+
+
 .downloadList{
   background-color: var(--gray-color);
   padding: 2rem 1rem;
@@ -1807,10 +1867,14 @@ input:-internal-autofill-selected {
   border-radius: .5rem;
   background-color: var(--gray-color);
   padding: 2.1rem 1.5rem;
-  color: #C0C0C1;
+  color: var(--text-color);
 
   &:focus{
     background-color: var(--gray-color);
+  }
+
+  &::placeholder{
+    color: #C0C0C1;
   }
 }
 
@@ -1860,7 +1924,8 @@ input[type="checkbox"]{
 }
 
 .selectBox__output, 
-.selectBox__output_time{
+.selectBox__output_timefor,
+.selectBox__output_timeto{
   position: relative;
   display: flex;
   align-items: center;
@@ -1887,6 +1952,7 @@ input[type="checkbox"]{
   }
 }
 
+/* スペースの時 */
 .selectSpace{
   color: #C0C0C1;
 }
@@ -1896,6 +1962,23 @@ input[type="checkbox"]{
 }
 
 .selectBox__output.open::after{
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* 時間選択の時 */
+.selectTimefor, .selectTimeto{
+  color: #C0C0C1;
+}
+
+.selectTimefor.open, .selectTimeto.open{
+  color: var(--text-color);
+}
+
+.selectBox__output_timefor.open::after{
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.selectBox__output_timeto.open::after{
   transform: translateY(-50%) rotate(180deg);
 }
 
@@ -1909,12 +1992,16 @@ input[type="checkbox"]{
   z-index: 10;
 }
 
-.selectBox__selectorItem{
+.selectBox__selectorItem, 
+.selectBox__selectortimefor, 
+.selectBox__selectortimeto{
   width: 100%;
   padding: 2.1rem 1.5rem;
 }
 
-.selectBox__selectorItem:hover{
+.selectBox__selectorItem:hover, 
+.selectBox__selectortimefor:hover, 
+.selectBox__selectortimeto:hover{
   background-color: #EDD99A;
 }
 /* /select */
@@ -1929,6 +2016,18 @@ input[type="checkbox"]{
 }
 
 /* calendar */
+.calendarLabel{
+  
+  label{
+    margin-bottom: 0;
+  }
+
+  small{
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
 .dataWrapper{
   position: relative;
   appearance: none;
@@ -1937,7 +2036,7 @@ input[type="checkbox"]{
 
   &::after{
     position: absolute;
-    content: '(カレンダーの空き状況をご確認の上、年/月/日をご指定ください)';
+    content: '';
     top: 0;
     left: 0;
     width: 100%;
@@ -1945,7 +2044,7 @@ input[type="checkbox"]{
     border-radius: .5rem;
     background-color: var(--gray-color);
     padding: 1rem 1.5rem;
-    color: #C0C0C1;
+    color: var(--text-color);
     z-index: 0;
   }
 }
@@ -1958,7 +2057,7 @@ input[type="date"]{
 }
 
 .date::-webkit-datetime-edit-fields-wrapper{
-  opacity: 0;
+  padding: 2.1rem 1.5rem;
 }
 
 .date::-webkit-calendar-picker-indicator {
@@ -1966,6 +2065,7 @@ input[type="date"]{
   width: 100%;
   height: max(6.5rem, 65px);
   margin: 0;
+  padding: 2.1rem 1.5rem;
   opacity: 0;
   cursor: pointer;
   z-index: 2;
@@ -2099,11 +2199,16 @@ input[type="button"]:focus {
   
   /* select */    
   .selectBox__output, 
-  .selectBox__output_time{
+  .selectBox__output_timefor,
+  .selectBox__output_timeto{
     padding: 2.1rem 2.6rem;
   }
     
-  .selectBox__selectorItem{
+  /* スペースの時 */
+
+  .selectBox__selectorItem, 
+  .selectBox__selectortimefor, 
+  .selectBox__selectortimeto{
     padding: 2.1rem 2.6rem;
   }
   /* /select */
@@ -2111,11 +2216,16 @@ input[type="button"]:focus {
   /* calendar */
   .calendarLabel{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    label{
+      margin-bottom: 0;
+    }
 
     small{
       margin-left: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
   }
 

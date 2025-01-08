@@ -82,25 +82,26 @@ $(function () {
 
 //選択肢をクリックした時の動作
 $('.selectBox__selectorItem').on('click', function () {
-  const selectVal = $(this).data('select');
+  const selectVal = $(this).data('selectspace');
   const selectText = $(this).text();
   $(this).parent('.selectBox__selector').prev('.selectBox__output').text(selectText);
   $(this).parent('.selectBox__selector').slideUp();
   $(this).parents('.selectBox__output').slideDown();
-  $(this).parent('.selectBox__selector').next('select').val(selectVal);
+  $(this).parent('.selectBox__selector').next('selectspace').val(selectVal);
+  $(".selectSpace").toggleClass('open');
 });
 
 /*-------------------------
-select 時間指定
+select 時間指定for
 --------------------------*/
 //初期値
-$('.selectBox__output_time').each(function () {
-  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectorItem:first-child').text()
+$('.selectBox__output_timefor').each(function () {
+  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectortimefor:first-child').text()
   $(this).text(defaultText);
 })
 
 //出力の枠をクリックした時の動作
-$('.selectBox__output_time').on('click', function (e) {
+$('.selectBox__output_timefor').on('click', function (e) {
   e.stopPropagation();
   if ($(this).hasClass('open')) {
     $(this).next('.selectBox__selector').slideUp();
@@ -108,23 +109,91 @@ $('.selectBox__output_time').on('click', function (e) {
     $(this).next('.selectBox__selector').slideDown();
   }
   $(this).toggleClass('open');
-  $(".selectSpace").toggleClass('open');
+  $(".selectTimefor").toggleClass('open');
 });
 
 $(function () {
-  $(".selectBox__output_time").click(function(){
-    $(".selectSpace").toggleClass("open");
+  $(".selectBox__output_timefor").click(function(){
+    $(".selectTimefor").toggleClass("open");
   });
 })
 
 //選択肢をクリックした時の動作
-$('.selectBox__selectorItem').on('click', function () {
-  const selectVal = $(this).data('select');
+$('.selectBox__selectortimefor').on('click', function () {
+  const selectVal = $(this).data('selecttimefor');
   const selectText = $(this).text();
-  $(this).parent('.selectBox__selector').prev('.selectBox__output_time').text(selectText);
+  $(this).parent('.selectBox__selector').prev('.selectBox__output_timefor').text(selectText);
   $(this).parent('.selectBox__selector').slideUp();
-  $(this).parents('.selectBox__output_time').slideDown();
-  $(this).parent('.selectBox__selector').next('select').val(selectVal);
+  $(this).parents('.selectBox__output_timefor').slideDown();
+  $(this).parent('.selectBox__selector').next('selecttimefor').val(selectVal);
+  $(".selectBox__output_timefor").toggleClass('open');
 });
 
 
+/*-------------------------
+select 時間指定to
+--------------------------*/
+//初期値
+$('.selectBox__output_timeto').each(function () {
+  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectortimeto:first-child').text()
+  $(this).text(defaultText);
+})
+
+//出力の枠をクリックした時の動作
+$('.selectBox__output_timeto').on('click', function (e) {
+  e.stopPropagation();
+  if ($(this).hasClass('open')) {
+    $(this).next('.selectBox__selector').slideUp();
+  } else {
+    $(this).next('.selectBox__selector').slideDown();
+  }
+  $(this).toggleClass('open');
+  $(".selectTimeto").toggleClass('open');
+});
+
+$(function () {
+  $(".selectBox__output_timeto").click(function(){
+    $(".selectTimeto").toggleClass("open");
+  });
+})
+
+//選択肢をクリックした時の動作
+$('.selectBox__selectortimeto').on('click', function () {
+  const selectVal = $(this).data('selecttimeto');
+  const selectText = $(this).text();
+  $(this).parent('.selectBox__selector').prev('.selectBox__output_timeto').text(selectText);
+  $(this).parent('.selectBox__selector').slideUp();
+  $(this).parents('.selectBox__output_timeto').slideDown();
+  $(this).parent('.selectBox__selector').next('selecttimeto').val(selectVal);
+  $(".selectBox__output_timeto").toggleClass('open');
+});
+
+
+// datepicker初期表示時の文字色変更
+$(window).on('load', function ()
+	{
+		$.each($('input[type=date]'), (index, datebox) =>
+			{
+				datebox.style.color = (datebox.value) ? '#080404' : 'transparent';
+			}
+		);
+	}
+);
+
+$(function ()
+	{
+		// フォーカス取得時は入力用にいったん色を付ける
+		$('input[type=date]').focus(function (event)
+			{
+				this.style.color = '#080404';
+			}
+		);
+
+		// フォーカス喪失後の文字色変更
+		$('input[type=date]').blur(function (event)
+			{
+				this.style.color = (this.value) ? '#080404' : '#080404';
+			}
+		);
+	}
+);

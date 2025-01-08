@@ -18,10 +18,10 @@
       <h2>
         <?php the_field('catchcopy');?>
       </h2>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObject.svg" alt="mapObject" loading="lazy" width="" height="" class="mapObject">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObject.svg" alt="mapObject" loading="lazy" width="153" height="86" class="mapObject">
     </div>
     <div class="mv_graphic">
-      <img src="<?php the_field('mainvisual_sp');?>" alt="mv" loading="lazy" width="" height="" class="disp_sp fuwat">
+      <img src="<?php the_field('mainvisual_sp');?>" alt="mv" loading="lazy" width="355" height="358" class="disp_sp fuwat">
       <div class="lead">
         <h3 class="mv_leadTitle">OHAKO BASE</h3>
         <p>
@@ -31,7 +31,7 @@
         </p>
         <p>使い方は様々、皆さんの得意な活動を応援します。</p>
       </div>
-      <img src="<?php the_field('mainvisual_pc');?>" alt="mv" loading="lazy" width="" height="" class="disp_pc fuwat">
+      <img src="<?php the_field('mainvisual_pc');?>" alt="mv" loading="lazy" width="721" height="538" class="disp_pc fuwat">
     </div>
   </section>
   <!-- /MV -->
@@ -55,8 +55,8 @@
     <div class="about_contents">
       <div class="topArea">
         <div class="titleArea" id="about">
-          <img src="<?php the_field('about_topImage');?>" alt="" loading="lazy" width="" height="" class="about_topImage">
-          <h2><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">とは…</h2>
+          <img src="<?php the_field('about_topImage');?>" alt="" loading="lazy" width="331" height="268" class="about_topImage">
+          <h2><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" loading="lazy" alt="OHAKO">とは…</h2>
         </div>
         <div class="textArea">
           <div class="wrapper">
@@ -64,32 +64,32 @@
             <p><?php the_field('bodytext_about');?></p>
           </div>
           <div class="imageArea1">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObjectMizuho.svg" alt="Mizuho is Here!" loading="lazy" width="" height="" class="mapObjectMizuho">
-            <img src="<?php the_field('about_image1');?>" alt="" loading="lazy" width="" height="" class="image1">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObjectMizuho.svg" alt="Mizuho is Here!" loading="lazy" width="499" height="252" class="mapObjectMizuho">
+            <img src="<?php the_field('about_image1');?>" alt="" loading="lazy" width="227" height="167" class="image1">
           </div>
         </div>
       </div>
       <div class="imageArea2">
-        <img src="<?php the_field('about_image2');?>" alt="" loading="lazy" width="" height="" class="image2">
-        <img src="<?php the_field('about_image3');?>" alt="" loading="lazy" width="" height="" class="image3">
+        <img src="<?php the_field('about_image2');?>" alt="" loading="lazy" width="165" height="121" class="image2">
+        <img src="<?php the_field('about_image3');?>" alt="" loading="lazy" width="134" height="98" class="image3">
       </div>
       <div class="cvAreaWrapper">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_cvImage.jpg" alt="" loading="lazy" width="" height="" class="cvImage">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_cvImage.jpg" alt="" loading="lazy" width="164" height="120" class="cvImage">
         <div class="cvArea">
-          あなたも<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">で<br>
+          あなたも<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO" loading="lazy" width="118" height="24">で<br>
           <span>出店してみませんか？</span>
-          <a href="">お申し込みはこちら ▶︎</a>
+          <a href="#contact">お申し込みはこちら ▶︎</a>
         </div>
       </div>
     </div>
-    <div class="background_image">
+    <div class="background_image disp_pc">
       <div class="scroll-infinity">
         <div class="scroll-infinity__wrap">
           <ul class="scroll-infinity__list scroll-infinity__list--left">
-            <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt=""></li>
+            <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt="" loading="lazy" width="1164" height="236"></li>
           </ul>
           <ul class="scroll-infinity__list scroll-infinity__list--left">
-            <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt=""></li>
+            <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt="" loading="lazy" width="1164" height="236"></li>
           </ul>
         </div>
       </div>
@@ -105,12 +105,12 @@
       <h2>施設情報</h2>
     </div>
     <div class="allMap">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_sp.png" alt="全体図" loading="lazy" width="" height="" class="disp_sp">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_pc.png" alt="全体図" loading="lazy" width="" height="" class="disp_pc">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_sp.png" alt="全体図" loading="lazy" width="687" height="580" class="disp_sp">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_pc.png" alt="全体図" loading="lazy" width="671" height="661" class="disp_pc">
       <div class="list">
         <div class="right">
           <div class="primary">
-            <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail1.png" alt="オハコヤ" loading="lazy" width="" height=""></div>
+            <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail1.png" alt="オハコヤ" loading="lazy" width="210" height="67"></div>
             <div>
               <div class="listNoWrapper">
                 <div class="listNo">1</div>
@@ -127,7 +127,7 @@
             </div>
           </div>
           <div class="secondary">
-            <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail2.png" alt="オハコ デッキ" loading="lazy" width="" height=""></div>
+            <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail2.png" alt="オハコ デッキ" loading="lazy" width="115" height="105"></div>
             <div>
               <div class="listNoWrapper">
                 <div class="listNo">2</div>
@@ -145,7 +145,7 @@
           </div>
         </div>
         <div class="tertiary left">
-          <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail3.png" alt="オハコ ヤード" loading="lazy" width="" height=""></div>
+          <div class="informationMap"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/informationMap_detail3.png" alt="オハコ ヤード" loading="lazy" width="150" height="153"></div>
           <div>
             <div class="listNoWrapper">
               <div class="listNo">3</div>
@@ -169,8 +169,8 @@
   <!-- facilities -->
   <section class="facilities wrapper">
     <h2>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/facilities_decorationLeft.svg" alt=""><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO" class="logo">
-      <span>の</span>設備<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/facilities_decorationRight.svg" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/facilities_decorationLeft.svg" alt="" loading="lazy" width="23" height="26" class="decoration_left"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO" loading="lazy" width="120" height="24" class="logo">
+      <span>の</span>設備<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/facilities_decorationRight.svg" alt="" loading="lazy" width="23" height="26" class="decoration_right">
     </h2>
     <ul>
       <li class="primary fuwat">
@@ -183,14 +183,14 @@
         <div class="spaceListWrapper">
           <ul class="spaceList">
             <li>
-              <img src="<?php the_field('ohakoya_image1');?>" alt="" class="facilitiesImage">
+              <img src="<?php the_field('ohakoya_image1');?>" alt="" loading="lazy" width="299" height="202" class="facilitiesImage">
               <div class="item_info">
                 <h4><?php the_field('space1');?></h4>
                 <?php the_field('ohakoya_item1');?>
               </div>
             </li>
             <li>
-              <img src="<?php the_field('ohakoya_image2');?>" alt="" class="facilitiesImage">
+              <img src="<?php the_field('ohakoya_image2');?>" alt="" loading="lazy" width="299" height="202" class="facilitiesImage">
               <div class="item_info">
                 <h4><?php the_field('space2');?></h4>
                 <?php the_field('ohakoya_item2');?>
@@ -198,7 +198,7 @@
             </li>
             <?php if(get_field('ohakoya_image3') ): ?>
             <li>
-              <img src="<?php the_field('ohakoya_image3');?>" alt="" class="facilitiesImage">
+              <img src="<?php the_field('ohakoya_image3');?>" alt="" loading="lazy" width="299" height="202" class="facilitiesImage">
               <div class="item_info">
                 <h4><?php the_field('space3');?></h4>
                 <?php the_field('ohakoya_item3');?>
@@ -207,7 +207,7 @@
             <?php else: ?>
             <?php endif; ?>
           </ul>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoya_deco.svg" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoya_deco.svg" alt="" loading="lazy" width="83" height="150">
         </div>
       </li>
       <li class="secondary fuwat">
@@ -218,13 +218,13 @@
         <div class="spaceListWrapper">
           <ul class="spaceList">
             <li>
-            <img src="<?php the_field('ohakodeck_image');?>" alt="" class="facilitiesImage">
+            <img src="<?php the_field('ohakodeck_image');?>" alt="" loading="lazy" width="299" height="202" class="facilitiesImage">
               <div class="item_info">
                 <?php the_field('ohakodeck_item');?>
               </div>
             </li>
           </ul>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoDeck_deco.svg" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoDeck_deco.svg" alt="" loading="lazy" width="95" height="99">
         </div>
       </li>
       <li class="tertiary fuwat">
@@ -235,13 +235,13 @@
         <div class="spaceListWrapper">
           <ul class="spaceList">
             <li>
-            <img src="<?php the_field('ohakoyard_image');?>" alt="" class="facilitiesImage">
+            <img src="<?php the_field('ohakoyard_image');?>" alt="" loading="lazy" class="facilitiesImage">
               <div class="item_info">
                 <?php the_field('ohakoyard_item');?>
               </div>
             </li>
           </ul>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoYard_deco.svg" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoYard_deco.svg" alt="" loading="lazy" width="91" height="54">
         </div>
       </li>
     </ul>
@@ -306,7 +306,7 @@
     <ol class="step">
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step1');?>" alt="">
+          <img src="<?php the_field('icon_step1');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -321,7 +321,7 @@
       </li>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step2');?>" alt="">
+          <img src="<?php the_field('icon_step2');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -336,7 +336,7 @@
       </li>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step3');?>" alt="">
+          <img src="<?php the_field('icon_step3');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -351,7 +351,7 @@
       </li>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step4');?>" alt="">
+          <img src="<?php the_field('icon_step4');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -366,7 +366,7 @@
       </li>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step5');?>" alt="">
+          <img src="<?php the_field('icon_step5');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -382,7 +382,7 @@
       <?php if(get_field('icon_step6') ): ?>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step6');?>" alt="">
+          <img src="<?php the_field('icon_step6');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -401,7 +401,7 @@
       <?php if(get_field('icon_step7') ): ?>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step7');?>" alt="">
+          <img src="<?php the_field('icon_step7');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -420,7 +420,7 @@
       <?php if(get_field('icon_step8') ): ?>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step8');?>" alt="">
+          <img src="<?php the_field('icon_step8');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -439,7 +439,7 @@
       <?php if(get_field('icon_step9') ): ?>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step9');?>" alt="">
+          <img src="<?php the_field('icon_step9');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -458,7 +458,7 @@
       <?php if(get_field('icon_step10') ): ?>
       <li>
         <div class="step_icon">
-          <img src="<?php the_field('icon_step10');?>" alt="">
+          <img src="<?php the_field('icon_step10');?>" alt="" loading="lazy" width="69" height="68">
         </div>
         <div class="stepItem">
           <div class="stepNo">
@@ -551,13 +551,13 @@
   <section class="form wrapper" id="contact">
     <div class="formInner">
       <div class="form_title">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logo.png" alt="OHAKO">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logo.png" alt="OHAKO" loading="lazy" width="149" height="39">
         <h2>出店のお申し込み</h2>
       </div>
       <p class="lead">出店のお申し込みをする場合は、以下の流れに沿って<br class="disp_pc">フォームの入力を完了したのち、<br class="disp_sp">お申し込みください。</p>
       <div class="step">
         <div class="stepTitle">
-          <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/formIcon_find.svg" alt="" loading="lazy" width="" height=""></div>
+          <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/formIcon_find.svg" alt="" loading="lazy" width="46" height="44"></div>
           <div class="stepItem">
             <div class="stepNo">STEP1</div>
             <p class="stepText">注意事項・提出書類の確認</p>
@@ -607,7 +607,7 @@
       </div>
       <div class="step">
         <div class="stepTitle">
-          <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/formIcon_mail.svg" alt="" loading="lazy" width="" height=""></div>
+          <div class="step_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/formIcon_mail.svg" alt="" loading="lazy" width="46" height="44"></div>
           <div class="stepItem">
             <div class="stepNo">STEP2</div>
             <p class="stepText">出店内容の入力</p>
