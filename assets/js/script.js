@@ -4,13 +4,34 @@
 モバイルの時のボタン
 --------------------------*/
 $(function () {
-  $(".btn-trigger").click(function(){
-    $(".btn-trigger").toggleClass("active");
+  $(".navButton").click(function(){
+    $(".navButton").toggleClass("active");
   });
-  $(".btn-trigger").click(function(){
-    $(".navigation").toggleClass("open");
+  $(".navButton").click(function(){
+    $("nav").toggleClass("open");
+  });
+  $("nav a").click(function(){
+    $("nav").toggleClass("open");
   });
 })
+
+
+/*-------------------------
+ふわっと表示
+--------------------------*/
+jQuery(function(){
+  jQuery('.fuwat').css('visibility','hidden');
+  jQuery(window).scroll(function(){
+   var windowHeight = jQuery(window).height(),
+       topWindow = jQuery(window).scrollTop();
+   jQuery('.fuwat').each(function(){
+    var objectPosition = jQuery(this).offset().top;
+    if(topWindow > objectPosition - windowHeight + 200){
+     jQuery(this).addClass("fuwatAnime");
+    }
+   });
+  });
+});
 
 
 //PageTopボタン　すぅっと現れる
@@ -59,7 +80,6 @@ $(function () {
   });
 })
 
-
 //選択肢をクリックした時の動作
 $('.selectBox__selectorItem').on('click', function () {
   const selectVal = $(this).data('select');
@@ -97,7 +117,6 @@ $(function () {
   });
 })
 
-
 //選択肢をクリックした時の動作
 $('.selectBox__selectorItem').on('click', function () {
   const selectVal = $(this).data('select');
@@ -107,4 +126,5 @@ $('.selectBox__selectorItem').on('click', function () {
   $(this).parents('.selectBox__output_time').slideDown();
   $(this).parent('.selectBox__selector').next('select').val(selectVal);
 });
+
 

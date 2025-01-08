@@ -16,27 +16,27 @@
       <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logo.png" alt="OHAKO" class="disp_sp"></a>
       <ul>
         <li>
-          <a href="#">
+          <a href="#about">
             <p>OHAKOとは</p>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#information">
             <p>施設情報</p>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#flow">
             <p>出店の流れ</p>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#faq">
             <p>よくある質問</p>
           </a>
         </li>
       </ul>
-      <a href="" class="cvButton">出店のお申し込み</a>
+      <a href="#contact" class="cvButton">出店のお申し込み</a>
     </div>
   </nav>
   <!-- /menu -->
