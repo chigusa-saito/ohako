@@ -27,4 +27,5 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/reset.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/style.css">
+  <link rel=”stylesheet” href=”swiper-bundle.min.css”/>
 </head>

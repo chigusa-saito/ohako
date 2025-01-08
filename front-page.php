@@ -52,32 +52,47 @@
 
   <!-- about -->
   <section class="about">
-    <div class="topArea">
-      <div class="titleArea" id="about">
-        <img src="<?php the_field('about_topImage');?>" alt="" loading="lazy" width="" height="" class="about_topImage">
-        <h2><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">とは…</h2>
-      </div>
-      <div class="textArea">
-        <div class="wrapper">
-          <h3><?php the_field('subtitle');?></h3>
-          <p><?php the_field('bodytext_about');?></p>
+    <div class="about_contents">
+      <div class="topArea">
+        <div class="titleArea" id="about">
+          <img src="<?php the_field('about_topImage');?>" alt="" loading="lazy" width="" height="" class="about_topImage">
+          <h2><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">とは…</h2>
         </div>
-        <div class="imageArea1">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObjectMizuho.svg" alt="Mizuho is Here!" loading="lazy" width="" height="" class="mapObjectMizuho">
-          <img src="<?php the_field('about_image1');?>" alt="" loading="lazy" width="" height="" class="image1">
+        <div class="textArea">
+          <div class="wrapper">
+            <h3><?php the_field('subtitle');?></h3>
+            <p><?php the_field('bodytext_about');?></p>
+          </div>
+          <div class="imageArea1">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObjectMizuho.svg" alt="Mizuho is Here!" loading="lazy" width="" height="" class="mapObjectMizuho">
+            <img src="<?php the_field('about_image1');?>" alt="" loading="lazy" width="" height="" class="image1">
+          </div>
+        </div>
+      </div>
+      <div class="imageArea2">
+        <img src="<?php the_field('about_image2');?>" alt="" loading="lazy" width="" height="" class="image2">
+        <img src="<?php the_field('about_image3');?>" alt="" loading="lazy" width="" height="" class="image3">
+      </div>
+      <div class="cvAreaWrapper">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_cvImage.jpg" alt="" loading="lazy" width="" height="" class="cvImage">
+        <div class="cvArea">
+          あなたも<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">で<br>
+          <span>出店してみませんか？</span>
+          <a href="">お申し込みはこちら ▶︎</a>
         </div>
       </div>
     </div>
-    <div class="imageArea2">
-      <img src="<?php the_field('about_image2');?>" alt="" loading="lazy" width="" height="" class="image2">
-      <img src="<?php the_field('about_image3');?>" alt="" loading="lazy" width="" height="" class="image3">
-    </div>
-    <div class="cvAreaWrapper">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/about_cvImage.jpg" alt="" loading="lazy" width="" height="" class="cvImage">
-      <div class="cvArea">
-        あなたも<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">で<br>
-        <span>出店してみませんか？</span>
-        <a href="">お申し込みはこちら ▶︎</a>
+    <!-- <div class="swiper">
+      <div class="swiper-wrapper"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text_slider.svg" alt="" class="swiper-slide"></div>
+    </div> -->
+    <div class="scroll-infinity">
+      <div class="scroll-infinity__wrap">
+        <ul class="scroll-infinity__list scroll-infinity__list--left">
+          <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt=""></li>
+        </ul>
+        <ul class="scroll-infinity__list scroll-infinity__list--left">
+          <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt=""></li>
+        </ul>
       </div>
     </div>
   </section>

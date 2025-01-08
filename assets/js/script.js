@@ -129,3 +129,7 @@ $('.selectBox__selectorItem').on('click', function () {
   $(this).parent('.selectBox__selector').next('select').val(selectVal);
 });
 
+
+// swiper
+let swiper = new Swiper('.swiper', {
+});

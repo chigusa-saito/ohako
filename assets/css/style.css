@@ -776,7 +776,14 @@ section.event{
 
 @media screen and (min-width: 769px) {
   .about{
-    margin-top: 0;  
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+
+    .about_contents{
+      position: relative;
+      z-index: 1;
+    }
 
     .topArea{
       display: flex;
@@ -893,6 +900,40 @@ section.event{
       margin-top: 4rem;
     }
   }
+
+  @keyframes infinity-scroll-left {
+    from {
+      transform: translateX(0);
+    }
+      to {
+      transform: translateX(-100%);
+    }
+  }
+  .scroll-infinity{
+    position: absolute;
+    bottom: 40rem;
+    z-index: 0;
+  }
+  .scroll-infinity__wrap {
+    display: flex;
+    overflow: hidden;
+  }
+  .scroll-infinity__list {
+    display: flex;
+    list-style: none;
+    padding: 0
+  }
+  .scroll-infinity__list--left {
+    animation: infinity-scroll-left 20s infinite linear .5s both;
+  }
+  .scroll-infinity__item {
+    width: 116.4rem;
+    margin-right: 11.8rem;
+  }
+  .scroll-infinity__item>img {
+    width: 116.4rem;
+  }
+    
 }
 
 /*------------------------
