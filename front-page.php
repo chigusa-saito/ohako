@@ -82,17 +82,16 @@
         </div>
       </div>
     </div>
-    <!-- <div class="swiper">
-      <div class="swiper-wrapper"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text_slider.svg" alt="" class="swiper-slide"></div>
-    </div> -->
-    <div class="scroll-infinity">
-      <div class="scroll-infinity__wrap">
-        <ul class="scroll-infinity__list scroll-infinity__list--left">
-          <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt=""></li>
-        </ul>
-        <ul class="scroll-infinity__list scroll-infinity__list--left">
-          <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt=""></li>
-        </ul>
+    <div class="background_image">
+      <div class="scroll-infinity">
+        <div class="scroll-infinity__wrap">
+          <ul class="scroll-infinity__list scroll-infinity__list--left">
+            <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt=""></li>
+          </ul>
+          <ul class="scroll-infinity__list scroll-infinity__list--left">
+            <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt=""></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

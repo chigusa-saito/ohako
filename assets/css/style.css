@@ -909,9 +909,18 @@ section.event{
       transform: translateX(-100%);
     }
   }
-  .scroll-infinity{
+
+  .background_image{
     position: absolute;
-    bottom: 40rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .scroll-infinity{
+    position: fixed;
+    bottom: 0;
     z-index: 0;
   }
   .scroll-infinity__wrap {

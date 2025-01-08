@@ -80,7 +80,6 @@ $(function () {
   });
 })
 
-
 //選択肢をクリックした時の動作
 $('.selectBox__selectorItem').on('click', function () {
   const selectVal = $(this).data('select');
@@ -118,7 +117,6 @@ $(function () {
   });
 })
 
-
 //選択肢をクリックした時の動作
 $('.selectBox__selectorItem').on('click', function () {
   const selectVal = $(this).data('select');
@@ -130,6 +128,3 @@ $('.selectBox__selectorItem').on('click', function () {
 });
 
 
-// swiper
-let swiper = new Swiper('.swiper', {
-});
