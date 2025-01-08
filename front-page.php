@@ -21,7 +21,7 @@
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObject.svg" alt="mapObject" loading="lazy" width="" height="" class="mapObject">
     </div>
     <div class="mv_graphic">
-      <img src="<?php the_field('mainvisual_sp');?>" alt="mv" loading="lazy" width="" height="" class="disp_sp">
+      <img src="<?php the_field('mainvisual_sp');?>" alt="mv" loading="lazy" width="" height="" class="disp_sp fuwat">
       <div class="lead">
         <h3 class="mv_leadTitle">OHAKO BASE</h3>
         <p>
@@ -31,7 +31,7 @@
         </p>
         <p>使い方は様々、皆さんの得意な活動を応援します。</p>
       </div>
-      <img src="<?php the_field('mainvisual_pc');?>" alt="mv" loading="lazy" width="" height="" class="disp_pc">
+      <img src="<?php the_field('mainvisual_pc');?>" alt="mv" loading="lazy" width="" height="" class="disp_pc fuwat">
     </div>
   </section>
   <!-- /MV -->
@@ -53,7 +53,7 @@
   <!-- about -->
   <section class="about">
     <div class="topArea">
-      <div class="titleArea">
+      <div class="titleArea" id="about">
         <img src="<?php the_field('about_topImage');?>" alt="" loading="lazy" width="" height="" class="about_topImage">
         <h2><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/logoText.svg" alt="OHAKO">とは…</h2>
       </div>
@@ -84,7 +84,7 @@
   <!-- /about -->
 
   <!-- information -->
-  <section class="information">
+  <section class="information" id="information">
     <div class="section_title">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logoSimbol.png" alt="" loading="lazy" width="30" height="30">
       <span>Information</span>
@@ -159,7 +159,7 @@
       <span>の</span>設備<img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/facilities_decorationRight.svg" alt="">
     </h2>
     <ul>
-      <li class="primary">
+      <li class="primary fuwat">
         <div class="title">
           <h3>
             オハコヤ
@@ -196,7 +196,7 @@
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoya_deco.svg" alt="">
         </div>
       </li>
-      <li class="secondary">
+      <li class="secondary fuwat">
         <div class="title">
           <h3>オハコ デッキ</h3>
           <span>OHAKO DECK</span>
@@ -213,7 +213,7 @@
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/ohakoDeck_deco.svg" alt="">
         </div>
       </li>
-      <li class="tertiary">
+      <li class="tertiary fuwat">
         <div class="title">
           <h3>オハコ ヤード</h3>
           <span>OHAKO YARD </span>
@@ -283,7 +283,7 @@
   <!-- /disclaimer -->
 
   <!-- flow -->
-  <section class="flow">
+  <section class="flow" id="flow">
     <div class="section_title">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logoSimbol.png" alt="" loading="lazy" width="30" height="30">
       <span>Flow</span>
@@ -464,7 +464,7 @@
   <!-- /flow -->
 
   <!-- faq -->
-  <section class="faq wrapper">
+  <section class="faq wrapper" id="faq">
     <div class="section_title">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logoSimbol.png" alt="" loading="lazy" width="30" height="30">
       <span>FAQ</span>
@@ -534,7 +534,7 @@
   <!-- /faq -->
 
   <!-- form -->
-  <section class="form wrapper">
+  <section class="form wrapper" id="contact">
     <div class="formInner">
       <div class="form_title">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logo.png" alt="OHAKO">

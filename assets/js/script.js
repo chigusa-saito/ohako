@@ -4,13 +4,34 @@
 モバイルの時のボタン
 --------------------------*/
 $(function () {
-  $(".btn-trigger").click(function(){
-    $(".btn-trigger").toggleClass("active");
+  $(".navButton").click(function(){
+    $(".navButton").toggleClass("active");
   });
-  $(".btn-trigger").click(function(){
-    $(".navigation").toggleClass("open");
+  $(".navButton").click(function(){
+    $("nav").toggleClass("open");
+  });
+  $("nav a").click(function(){
+    $("nav").toggleClass("open");
   });
 })
+
+
+/*-------------------------
+ふわっと表示
+--------------------------*/
+jQuery(function(){
+  jQuery('.fuwat').css('visibility','hidden');
+  jQuery(window).scroll(function(){
+   var windowHeight = jQuery(window).height(),
+       topWindow = jQuery(window).scrollTop();
+   jQuery('.fuwat').each(function(){
+    var objectPosition = jQuery(this).offset().top;
+    if(topWindow > objectPosition - windowHeight + 200){
+     jQuery(this).addClass("fuwatAnime");
+    }
+   });
+  });
+});
 
 
 //PageTopボタン　すぅっと現れる
