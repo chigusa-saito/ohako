@@ -920,7 +920,8 @@ section.event{
     z-index: 0;
   }
   .scroll-infinity{
-    position: fixed;
+    position: sticky;
+    top: calc(100vh - 24rem);
     bottom: 0;
     z-index: 0;
   }
