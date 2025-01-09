@@ -82,8 +82,8 @@
         </div>
       </div>
     </div>
-    <div class="background_image disp_pc">
-      <div class="scroll-infinity">
+    <div class="background_image disp_pc js-fixed-area">
+      <div class="scroll-infinity js-fixed-elm">
         <div class="scroll-infinity__wrap">
           <ul class="scroll-infinity__list scroll-infinity__list--left">
             <li class="scroll-infinity__item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/text-slider.svg" alt="" loading="lazy" width="1164" height="236"></li>
