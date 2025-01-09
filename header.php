@@ -11,10 +11,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php wp_head();?>
   <title>サイトタイトル</title>
   <meta name="desctiption" content="サイト説明">
   <meta property="og:title" content="サイトタイトル">
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="#">
   <meta property="og:image" content="#">
   <meta property="og:site_name" content="サイトタイトル">
