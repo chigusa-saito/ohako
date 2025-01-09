@@ -25,7 +25,7 @@
       <div class="lead">
         <h3 class="mv_leadTitle">OHAKO BASE</h3>
         <p>
-          JR八高線の箱根ケ崎駅西口ロータリー 横に<br>
+          JR八高線の箱根ケ崎駅西口ロータリー横に<br>
           誰もがチャレンジできる場所として<br>
           OHAKO BASE（オハコ ベース）があります。
         </p>
