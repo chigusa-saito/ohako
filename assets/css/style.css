@@ -532,7 +532,7 @@ nav{
 @media screen and (min-width: 769px) {  
   .mv {
     position: relative;
-    padding-top: 7rem;
+    padding-top: max(8rem, 80px);
   }
   
   .mv_title{
@@ -592,9 +592,9 @@ nav{
   }
 }
 
-@media screen and (min-width: 1000px) { 
+@media screen and (min-width: 1440px) { 
   .mv {
-    padding-top: max(7rem, 70px);
+    padding-top: 8rem;
   }
   
   .mv_graphic{
