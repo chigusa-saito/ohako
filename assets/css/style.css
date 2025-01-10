@@ -532,7 +532,7 @@ nav{
 @media screen and (min-width: 769px) {  
   .mv {
     position: relative;
-    padding-top: 7rem;
+    padding-top: max(8rem, 80px);
   }
   
   .mv_title{
@@ -592,9 +592,9 @@ nav{
   }
 }
 
-@media screen and (min-width: 1000px) { 
+@media screen and (min-width: 1440px) { 
   .mv {
-    padding-top: max(7rem, 70px);
+    padding-top: 8rem;
   }
   
   .mv_graphic{
@@ -672,6 +672,13 @@ section.event{
 ------------------------*/
 .about{
   margin-top: -3rem;
+  position: relative;
+  z-index: 1;
+
+  .about_contents{
+    position: relative;
+    z-index: 1;
+  }
 
   .about_topImage{
     width: 33.2rem;
@@ -775,16 +782,53 @@ section.event{
   }
 }
 
+@keyframes infinity-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+    to {
+    transform: translateX(-100%);
+  }
+}
+
+.background_image{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.scroll-infinity{
+  position: sticky;
+  top: calc(100vh - 9.7rem);
+  bottom: 0;
+  z-index: 0;
+}
+.scroll-infinity__wrap {
+  display: flex;
+  overflow: hidden;
+}
+.scroll-infinity__list {
+  display: flex;
+  list-style: none;
+  padding: 0
+}
+.scroll-infinity__list--left {
+  animation: infinity-scroll-left 20s infinite linear .5s both;
+}
+.scroll-infinity__item {
+  width: 47.4rem;
+  margin-right: 4.8rem;
+}
+.scroll-infinity__item>img {
+  width: 47.4rem;
+}
+
+
 @media screen and (min-width: 769px) {
   .about{
     margin-top: 0;
-    position: relative;
-    z-index: 1;
-
-    .about_contents{
-      position: relative;
-      z-index: 1;
-    }
 
     .topArea{
       display: flex;
@@ -902,40 +946,8 @@ section.event{
     }
   }
 
-  @keyframes infinity-scroll-left {
-    from {
-      transform: translateX(0);
-    }
-      to {
-      transform: translateX(-100%);
-    }
-  }
-
-  .background_image{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
   .scroll-infinity{
-    position: sticky;
     top: calc(100vh - 24rem);
-    bottom: 0;
-    z-index: 0;
-  }
-  .scroll-infinity__wrap {
-    display: flex;
-    overflow: hidden;
-  }
-  .scroll-infinity__list {
-    display: flex;
-    list-style: none;
-    padding: 0
-  }
-  .scroll-infinity__list--left {
-    animation: infinity-scroll-left 20s infinite linear .5s both;
   }
   .scroll-infinity__item {
     width: 116.4rem;
@@ -944,7 +956,6 @@ section.event{
   .scroll-infinity__item>img {
     width: 116.4rem;
   }
-    
 }
 
 /*------------------------
@@ -1053,7 +1064,6 @@ section.information{
 
     & > img{
       position: relative;
-      max-width: 79.2rem;
       width: 100%;
       margin: 0 auto;  
     }
@@ -1813,6 +1823,13 @@ section.faq{
   }
 }
 
+.wpcf7-form-control-wrap{
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-align: left;
+}
+
 /* error */
 .screen-reader-response{
   color: red;
@@ -1860,8 +1877,8 @@ label, .label{
 
 input[type="text"],
 input[type="email"],
-input[type="tel"],
-input:-internal-autofill-selected {
+input[type="tel"]
+{
   appearance: none;
   width: 100%;
   height: max(6.5rem, 65px);
@@ -1886,7 +1903,6 @@ input[type="checkbox"]{
   vertical-align: middle;
   background-color: var(--gray-color);
   transition: all .2s;
-
 
   & + span{
     padding-left: .8rem;
@@ -2048,6 +2064,11 @@ input[type="checkbox"]{
     color: var(--text-color);
     z-index: 0;
   }
+
+  p{
+    width: 100%;
+    height: 100%;
+  }
 }
 
 input[type="date"]{
@@ -2056,9 +2077,21 @@ input[type="date"]{
   height: 100%;
   z-index: 1;
 }
+input[type="date"]::-webkit-date-and-time-value {
+    text-align: left;
+    padding: 2.1rem 1.5rem !important;
+    line-height: max(2.4rem, 24px) !important;
+}
+
+input::-webkit-datetime-edit{
+  text-align: left;
+}
 
 .date::-webkit-datetime-edit-fields-wrapper{
-  padding: 2.1rem 1.5rem;
+  appearance: none;
+  padding: 2.1rem 1.5rem !important;
+  line-height: max(2.4rem, 24px);
+  /* line-height: max(6.5rem, 65px); */
 }
 
 .date::-webkit-calendar-picker-indicator {
@@ -2212,7 +2245,22 @@ input[type="button"]:focus {
   .selectBox__selectortimeto{
     padding: 2.1rem 2.6rem;
   }
+
+  /* 時間選択の時 */
+
+  .timeWrapper{
+    display: grid;
+    grid-template-columns: 1fr 4.8rem 1fr;
+    align-items: center;
+  }
   /* /select */
+
+  .tilde{
+  
+  span{
+      transform: rotate(0);
+    }
+  }  
   
   /* calendar */
   .calendarLabel{
@@ -2258,6 +2306,10 @@ input[type="button"]:focus {
 footer{
   height: 10rem;
   background-color: var(--primary-color);
+  background-image: url(../images/png/mizuhomaru.png);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 30%;
   text-align: center;
   padding-top: 3.2rem;
   margin-top: -1px;
@@ -2277,6 +2329,8 @@ footer{
 @media screen and (min-width: 769px) {
   footer{
     height: 15rem;
+    background-position: 86% 100%;
+    background-size: 13%;
     padding-top: 4.6rem;
   
     img{

@@ -10,15 +10,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>サイトタイトル</title>
-  <meta name="desctiption" content="サイト説明">
-  <meta property="og:title" content="サイトタイトル">
-<meta property="og:type" content="website">
-  <meta property="og:url" content="#">
-  <meta property="og:image" content="#">
-  <meta property="og:site_name" content="サイトタイトル">
-  <meta property="og:description" content="サイト説明">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>瑞穂町に新しいコンセプトで誕生した町の施設、OHAKO BASE（オハコベース）</title>
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png">
+  <?php wp_head();?>
   <meta name="format-detection" content="telephone=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,5 +23,4 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/reset.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/style.css">
-  <link rel=”stylesheet” href=”swiper-bundle.min.css”/>
 </head>
