@@ -16,8 +16,7 @@
   <section class="mv">
     <div class="mv_title">
       <h2>
-        	
-<?php the_field_without_wpautop('catchcopy');?>
+        <?php the_field_without_wpautop('catchcopy');?>
       </h2>
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObject.svg" alt="mapObject" width="153" height="86" class="mapObject">
     </div>
