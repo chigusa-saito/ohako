@@ -25,6 +25,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  -webkit-appearance: none;
 }
 
 /* Reapply the pointer cursor for anchor tags */
@@ -55,7 +56,7 @@ table {
 
 /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
 input, textarea {
-  -webkit-user-select: auto;
+  -webkit-user-select: none;
 }
 
 /* revert the 'white-space' property for textarea elements on Safari */

@@ -44,7 +44,7 @@
         <span>Event</span>
         <h2>イベントのお知らせ</h2>
       </div>
-      <div class="googlecalendar"><iframe src="https://calendar.google.com/calendar/embed?height=607&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&src=b2hha29iYXNlQGdtYWlsLmNvbQ&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%230B8043" style="border-width:0" width="811" height="607" frameborder="0" scrolling="no"></iframe></div>
+      <div class="googlecalendar"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&src=b2hha29iYXNlQGdtYWlsLmNvbQ&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%230B8043" style="border-width:0" width="811" height="607" frameborder="0" scrolling="no"></iframe></iframe></iframe></div>
         <!-- google calender -->
     </div>
   </section>
@@ -82,7 +82,7 @@
         </div>
       </div>
     </div>
-    <div class="background_image disp_pc">
+    <div class="background_image">
       <div class="scroll-infinity">
         <div class="scroll-infinity__wrap">
           <ul class="scroll-infinity__list scroll-infinity__list--left">
