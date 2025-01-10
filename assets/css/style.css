@@ -529,6 +529,20 @@ nav{
   padding-top: 0.8rem;
 }
 
+.fadein {
+  transition: all 1s;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+  }
+  &.move-to-top {
+    transform: translateY(100px);
+    &.active {
+      transform: translateY(0);
+    }
+  }
+}
+
 @media screen and (min-width: 769px) {  
   .mv {
     position: relative;

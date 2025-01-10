@@ -33,6 +33,21 @@ jQuery(function(){
   });
 });
 
+// mv
+$(function(){
+  var effectTargetRoot  = '.effect-onload';
+  var effectTargetClass = ['.fadein'];
+  $.each(effectTargetClass, function(i, value) {
+    var effectTarget = $(effectTargetRoot + ' ' + value);
+    //console.log('effectTarget= ' + i + '：' + effectTargetRoot + ' ' + value);
+    $(document).ready(function (){
+      effectTarget.each(function(){
+        $(this).addClass("active");
+      });
+    });
+  });
+});
+
 
 //PageTopボタン　すぅっと現れる
 jQuery(function() {

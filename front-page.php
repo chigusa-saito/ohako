@@ -20,8 +20,8 @@
       </h2>
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObject.svg" alt="mapObject" loading="lazy" width="153" height="86" class="mapObject">
     </div>
-    <div class="mv_graphic">
-      <img src="<?php the_field('mainvisual_sp');?>" alt="mv" loading="lazy" width="355" height="358" class="disp_sp fuwat">
+    <div class="mv_graphic effect-onload">
+      <img src="<?php the_field('mainvisual_sp');?>" alt="mv" loading="lazy" width="355" height="358" class="disp_sp fuwat_mv">
       <div class="lead">
         <h3 class="mv_leadTitle">OHAKO BASE</h3>
         <p>
@@ -31,7 +31,7 @@
         </p>
         <p>使い方は様々、皆さんの得意な活動を応援します。</p>
       </div>
-      <img src="<?php the_field('mainvisual_pc');?>" alt="mv" loading="lazy" width="721" height="538" class="disp_pc fuwat">
+      <img src="<?php the_field('mainvisual_pc');?>" alt="mv" loading="lazy" width="721" height="538" class="disp_pc fadein move-to-top">
     </div>
   </section>
   <!-- /MV -->
