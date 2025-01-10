@@ -44,7 +44,7 @@
         <span>Event</span>
         <h2>イベントのお知らせ</h2>
       </div>
-      <div class="googlecalendar"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&src=b2hha29iYXNlQGdtYWlsLmNvbQ&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%230B8043" style="border-width:0" width="811" height="607" frameborder="0" scrolling="no"></iframe></iframe></iframe></div>
+      <div class="googlecalendar"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&src=b2hha29iYXNlQGdtYWlsLmNvbQ&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%230B8043" width="811" height="607" scrolling="no"></iframe></div>
         <!-- google calender -->
     </div>
   </section>
@@ -61,7 +61,7 @@
         <div class="textArea">
           <div class="wrapper">
             <h3><?php the_field('subtitle');?></h3>
-            <p><?php the_field('bodytext_about');?></p>
+            <div><?php the_field('bodytext_about');?></div>
           </div>
           <div class="imageArea1">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/svg/mapObjectMizuho.svg" alt="Mizuho is Here!" loading="lazy" width="499" height="252" class="mapObjectMizuho">
@@ -119,9 +119,9 @@
                   <p class="alphabet">OHAKOYA</p>
                 </div>
               </div>
-              <p><?php the_field('ohakoya');?></p>
+              <div><?php the_field('ohakoya');?></div>
               <?php if(get_field('memo_ohakoya') ): ?>
-              <small><?php the_field('memo_ohakoya');?></small>
+              <div class="small"><?php the_field('memo_ohakoya');?></div>
               <?php else: ?>
               <?php endif; ?>
             </div>
@@ -136,9 +136,9 @@
                   <p class="alphabet">OHAKO DECK</p>
                 </div>
               </div>
-              <p><?php the_field('ohakodeck');?></p>
+              <div><?php the_field('ohakodeck');?></div>
               <?php if(get_field('memo_ohakodeck') ): ?>
-              <small><?php the_field('memo_ohakodeck');?></small>
+              <div class="small"><?php the_field('memo_ohakodeck');?></div>
               <?php else: ?>
               <?php endif; ?>
             </div>
@@ -154,9 +154,9 @@
                 <p class="alphabet">OHAKO YARD</p>
               </div>
             </div>
-            <p><?php the_field('ohakoyard');?></p>
+            <div><?php the_field('ohakoyard');?></div>
             <?php if(get_field('memo_ohakoyard') ): ?>
-              <small><?php the_field('memo_ohakoyard');?></small>
+              <div class="small"><?php the_field('memo_ohakoyard');?></div>
               <?php else: ?>
               <?php endif; ?>
           </div>

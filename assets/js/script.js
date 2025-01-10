@@ -13,6 +13,9 @@ $(function () {
   $("nav a").click(function(){
     $("nav").toggleClass("open");
   });
+  $("nav a").click(function(){
+    $(".navButton").toggleClass("active");
+  });
 })
 
 

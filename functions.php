@@ -16,3 +16,5 @@ function get_privacypolicy() {
 add_shortcode('show_privacypolicy', 'get_privacypolicy');
 wpcf7_add_shortcode('show_privacypolicy','get_privacypolicy'); 
 
+// meta name="generator" を非表示にする
+remove_action('wp_head', 'wp_generator');
