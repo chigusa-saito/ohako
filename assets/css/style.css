@@ -2026,6 +2026,20 @@ input[type="checkbox"]{
 .selectBox__selectortimeto:hover{
   background-color: #EDD99A;
 }
+
+/* firefoxでデフォルトのselectを消す */
+select{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+	background: none transparent;
+	vertical-align: middle;
+	text-indent: .01px; /*Firefox用*/
+	text-overflow: ""; /*Firefox用*/
+}
 /* /select */
 
 .tilde{
