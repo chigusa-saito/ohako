@@ -631,8 +631,12 @@ section.event{
     iframe{
       width: 100%;
       height: 30rem;
-      border: none;
+      border: none !important;
     }
+  }
+
+  .message{
+    text-decoration: underline;
   }
 }
 
@@ -662,13 +666,18 @@ section.event{
     .googlecalendar{
       display: block;
       padding-left: 6rem;
-      padding-bottom: 5rem;
+      padding-bottom: 1rem;
 
       iframe{
         width: 81.1rem;
         height: 60.7rem;
       }
-    }  
+    }
+    
+    .message{
+      padding-left: 6rem;
+      padding-bottom: 5rem;
+    }
   }
 }
 

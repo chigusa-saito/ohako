@@ -106,7 +106,7 @@ $('.selectBox__selectorItem').on('click', function () {
   $(this).parent('.selectBox__selector').slideUp();
   $(this).parents('.selectBox__output').slideDown();
   $(this).parent('.selectBox__selector').next('selectspace').val(selectVal);
-  $(".selectSpace").toggleClass('open');
+  $(".selectSpace").addClass('open');
 });
 
 /*-------------------------
