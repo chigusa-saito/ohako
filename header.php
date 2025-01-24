@@ -15,6 +15,19 @@
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png">
   <?php wp_head();?>
+  <meta name="description" content="JR八高線の箱根ケ崎駅西口ロータリー横に 誰もがチャレンジできる場所として OHAKO BASE（オハコ ベース）があります。使い方は様々、皆さんの得意な活動を応援します。">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="瑞穂町に新しいコンセプトで誕生した町の施設、OHAKO BASE（オハコベース）">
+  <meta property="og:description" content="JR八高線の箱根ケ崎駅西口ロータリー横に 誰もがチャレンジできる場所として OHAKO BASE（オハコ ベース）があります。使い方は様々、皆さんの得意な活動を応援します。">
+  <meta property="og:url" content="https://ohako.image-make.com/">
+  <meta property="og:site_name" content="OHAKO Dev">
+  <meta property="og:image" content="https://ohako.image-make.com/wp-content/uploads/2025/01/og_image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <meta name="format-detection" content="telephone=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
