@@ -13,6 +13,9 @@ $(function () {
   $("nav a").click(function(){
     $("nav").toggleClass("open");
   });
+  $("nav a").click(function(){
+    $(".navButton").toggleClass("active");
+  });
 })
 
 
@@ -30,6 +33,21 @@ jQuery(function(){
      jQuery(this).addClass("fuwatAnime");
     }
    });
+  });
+});
+
+// mv
+$(function(){
+  var effectTargetRoot  = '.effect-onload';
+  var effectTargetClass = ['.fadein'];
+  $.each(effectTargetClass, function(i, value) {
+    var effectTarget = $(effectTargetRoot + ' ' + value);
+    //console.log('effectTarget= ' + i + '：' + effectTargetRoot + ' ' + value);
+    $(document).ready(function (){
+      effectTarget.each(function(){
+        $(this).addClass("active");
+      });
+    });
   });
 });
 
@@ -88,7 +106,7 @@ $('.selectBox__selectorItem').on('click', function () {
   $(this).parent('.selectBox__selector').slideUp();
   $(this).parents('.selectBox__output').slideDown();
   $(this).parent('.selectBox__selector').next('selectspace').val(selectVal);
-  $(".selectSpace").toggleClass('open');
+  $(".selectSpace").addClass('open');
 });
 
 /*-------------------------
@@ -197,3 +215,13 @@ $(function ()
 		);
 	}
 );
+
+// ページ内遷移でURLからIDを削除
+$('a[href^="#"]').click(function(){
+  var href= $(this).attr("href");
+  var target = $(href == "#" || href == "" ? 'html' : href);
+  var position = target.offset().top;
+  $("html, body").animate({scrollTop:position},  "swing");
+  return false;
+});
+

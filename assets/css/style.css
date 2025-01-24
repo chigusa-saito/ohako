@@ -67,24 +67,15 @@ address {
   font-style: normal;
 }
 
-small{
+small, .small {
   font-size: 1.2rem;
 }
 
 @media screen and (min-width: 769px) {
-  small{
+  small, .small {
     font-size: max(1.2rem, 12px);
   }
 }
-
-/* @media screen and (min-width: 769px) {
-  html {
-    font-size: 62.5%;
-    16px ×62.5% = 10px
-    scroll-behavior: smooth;
-  }
-
-} */
 
 @media screen and (min-width: 769px) {
   html {
@@ -103,7 +94,6 @@ small{
     animation: fadeIn 2s ease 0s 1 normal;
     -webkit-animation: fadeIn 2s ease 0s 1 normal;
   }
-
 }
 
 
@@ -529,6 +519,20 @@ nav{
   padding-top: 0.8rem;
 }
 
+.fadein {
+  transition: all 2s 1s;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+  }
+  &.move-to-top {
+    transform: translateY(100px);
+    &.active {
+      transform: translateY(0);
+    }
+  }
+}
+
 @media screen and (min-width: 769px) {  
   .mv {
     position: relative;
@@ -627,7 +631,12 @@ section.event{
     iframe{
       width: 100%;
       height: 30rem;
+      border: none !important;
     }
+  }
+
+  .message{
+    text-decoration: underline;
   }
 }
 
@@ -657,13 +666,18 @@ section.event{
     .googlecalendar{
       display: block;
       padding-left: 6rem;
-      padding-bottom: 5rem;
+      padding-bottom: 1rem;
 
       iframe{
         width: 81.1rem;
         height: 60.7rem;
       }
-    }  
+    }
+    
+    .message{
+      padding-left: 6rem;
+      padding-bottom: 5rem;
+    }
   }
 }
 
@@ -2020,6 +2034,20 @@ input[type="checkbox"]{
 .selectBox__selectortimefor:hover, 
 .selectBox__selectortimeto:hover{
   background-color: #EDD99A;
+}
+
+/* firefoxでデフォルトのselectを消す */
+select{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+	background: none transparent;
+	vertical-align: middle;
+	text-indent: .01px; /*Firefox用*/
+	text-overflow: ""; /*Firefox用*/
 }
 /* /select */
 

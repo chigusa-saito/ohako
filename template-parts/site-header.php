@@ -7,13 +7,13 @@
 
 <header>
   <!-- header -->
-  <a href="">
-    <h1><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logo.png" alt="OHAKO" loading="lazy" width="" height=""></h1>
+  <a href="/">
+    <h1><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logo.png" alt="瑞穂町 OHAKO BASE" width="345" height="90"></h1>
   </a>
   <!-- menu -->
   <nav>
     <div>
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logo.png" alt="OHAKO" class="disp_sp"></a>
+      <a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/png/logo.png" alt="OHAKO" width="345" height="90" class="disp_sp"></a>
       <ul>
         <li>
           <a href="#about">
