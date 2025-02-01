@@ -510,6 +510,11 @@ nav{
   padding-left: 2rem;
   padding-bottom: 1.7rem;
   margin-top: -10.2rem;
+
+  img{
+    width: 100%;
+    height: calc(100vw - 2rem);
+  }
 }
 
 .mv_leadTitle{
@@ -574,6 +579,8 @@ nav{
 
     img{
       width: 85.2rem;
+      height: 63.6rem;
+      object-fit: cover;
     }
 
     .lead{
@@ -740,16 +747,19 @@ section.event{
 
   .image1{
     width: 22.8rem;
+    height: 16.7rem;
     margin-left: auto;
     margin-right: 0;
   }
 
   .image2{
     width: 16.5rem;
+    height: 12.1rem;
   }
 
   .image3{
     width: 13.4rem;
+    height: 9.8rem;
     margin-top: -8rem;
     margin-left: auto;
     margin-right: 1.6rem;
@@ -856,7 +866,7 @@ section.event{
   
     .about_topImage{
       width: 75.5rem;
-      height: auto;
+      height: 55.3rem;
       border-radius: 0 3rem 3rem 0;
       order: 2;
     }
@@ -906,14 +916,17 @@ section.event{
     
     .image1{
       width: 55rem;
+      height: 40rem;
     }
   
     .image2{
       width: 40rem;
+      height: 29.3rem;
     }
   
     .image3{
       width: 32.5rem;
+      height: 23.8rem;
       margin-top: -15rem;
       margin-left: 50.7rem;
       margin-right: auto;
@@ -1238,6 +1251,8 @@ section.information{
     }
 
     .facilitiesImage{
+      width: 100%;
+      height: calc((100vw - (2.2rem * 2 + 1.6rem * 2)) / 40 * 27);
       border-radius: .5rem;
       object-fit: cover;
     }
@@ -1521,6 +1536,7 @@ section.flow{
         img{
           position: relative;
           width: 100%;
+          height: 6.9rem;
           z-index: 1;
         }
   
@@ -1582,6 +1598,10 @@ section.flow{
         
         .step_icon{
           flex: 0 0 11.6rem;
+
+          img{
+            height: 11.6rem;
+          }
         
           &::after{
             position: absolute;
