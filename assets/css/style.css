@@ -1975,7 +1975,7 @@ input[type="checkbox"]{
 }
 
 .selectBox__output, 
-.selectBox__output_timefor,
+.selectBox__output_timefrom,
 .selectBox__output_timeto{
   position: relative;
   display: flex;
@@ -2008,24 +2008,28 @@ input[type="checkbox"]{
   color: #C0C0C1;
 }
 
-.selectSpace.open{
+.selectSpace.open,
+.selectTimefrom.open,
+.selectTimeto.open{
   color: var(--text-color);
 }
 
-.selectBox__output.open::after{
+.selectBox__output.open::after,
+.selectBox__output_timefrom.open::after,
+.selectBox__output_timeto.open::after{
   transform: translateY(-50%) rotate(180deg);
 }
 
 /* 時間選択の時 */
-.selectTimefor, .selectTimeto{
+.selectTimefrom, .selectTimeto{
   color: #C0C0C1;
 }
 
-.selectTimefor.open, .selectTimeto.open{
+.selectTimefrom.open, .selectTimeto.open{
   color: var(--text-color);
 }
 
-.selectBox__output_timefor.open::after{
+.selectBox__output_timefrom.open::after{
   transform: translateY(-50%) rotate(180deg);
 }
 
@@ -2044,14 +2048,14 @@ input[type="checkbox"]{
 }
 
 .selectBox__selectorItem, 
-.selectBox__selectortimefor, 
+.selectBox__selectortimefrom, 
 .selectBox__selectortimeto{
   width: 100%;
   padding: 2.1rem 1.5rem;
 }
 
 .selectBox__selectorItem:hover, 
-.selectBox__selectortimefor:hover, 
+.selectBox__selectortimefrom:hover, 
 .selectBox__selectortimeto:hover{
   background-color: #EDD99A;
 }

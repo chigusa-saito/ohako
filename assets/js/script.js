@@ -110,16 +110,16 @@ $('.selectBox__selectorItem').on('click', function () {
 });
 
 /*-------------------------
-select 時間指定for
+select 時間指定from
 --------------------------*/
 //初期値
-$('.selectBox__output_timefor').each(function () {
-  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectortimefor:first-child').text()
+$('.selectBox__output_timefrom').each(function () {
+  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectortimefrom:first-child').text()
   $(this).text(defaultText);
 })
 
 //出力の枠をクリックした時の動作
-$('.selectBox__output_timefor').on('click', function (e) {
+$('.selectBox__output_timefrom').on('click', function (e) {
   e.stopPropagation();
   if ($(this).hasClass('open')) {
     $(this).next('.selectBox__selector').slideUp();
@@ -127,24 +127,24 @@ $('.selectBox__output_timefor').on('click', function (e) {
     $(this).next('.selectBox__selector').slideDown();
   }
   $(this).toggleClass('open');
-  $(".selectTimefor").toggleClass('open');
+  $(".selectTimefrom").toggleClass('open');
 });
 
 $(function () {
-  $(".selectBox__output_timefor").click(function(){
-    $(".selectTimefor").toggleClass("open");
+  $(".selectBox__output_timefrom").click(function(){
+    $(".selectTimefrom").toggleClass("open");
   });
 })
 
 //選択肢をクリックした時の動作
-$('.selectBox__selectortimefor').on('click', function () {
-  const selectVal = $(this).data('selecttimefor');
-  const selectText = $(this).text();
-  $(this).parent('.selectBox__selector').prev('.selectBox__output_timefor').text(selectText);
+$('.selectBox__selectortimefrom').on('click', function () {
+  const selectValfrom = $(this).data('selecttimefrom');
+  const selectTextfrom = $(this).text();
+  $(this).parent('.selectBox__selector').prev('.selectBox__output_timefrom').text(selectTextfrom);
   $(this).parent('.selectBox__selector').slideUp();
-  $(this).parents('.selectBox__output_timefor').slideDown();
-  $(this).parent('.selectBox__selector').next('selecttimefor').val(selectVal);
-  $(".selectBox__output_timefor").toggleClass('open');
+  $(this).parents('.selectBox__output_timefrom').slideDown();
+  $(this).parent('.selectBox__selector').next('selecttimefrom').val(selectValfrom);
+  $(".selectBox__output_timefrom").toggleClass('open');
 });
 
 
