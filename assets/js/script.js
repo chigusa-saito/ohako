@@ -68,19 +68,20 @@ $('.selectBox__selectorItem').on('click', function () {
   $(this).parent('.selectBox__selector').slideUp();
   $(this).parents('.selectBox__output').slideDown();
   $(this).parent('.selectBox__selector').next('select').val(selectVal);
+  $(".selectBox__output").toggleClass("open");
 });
 
 /*-------------------------
-select 時間指定
+select 時間指定from
 --------------------------*/
 //初期値
-$('.selectBox__output_time').each(function () {
-  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectorItem:first-child').text()
+$('.selectBox__output_timefrom').each(function () {
+  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectortimefrom:first-child').text()
   $(this).text(defaultText);
 })
 
 //出力の枠をクリックした時の動作
-$('.selectBox__output_time').on('click', function (e) {
+$('.selectBox__output_timefrom').on('click', function (e) {
   e.stopPropagation();
   if ($(this).hasClass('open')) {
     $(this).next('.selectBox__selector').slideUp();
@@ -88,23 +89,63 @@ $('.selectBox__output_time').on('click', function (e) {
     $(this).next('.selectBox__selector').slideDown();
   }
   $(this).toggleClass('open');
-  $(".selectSpace").toggleClass('open');
+  $(".selectTimefrom").toggleClass('open');
 });
 
 $(function () {
-  $(".selectBox__output_time").click(function(){
-    $(".selectSpace").toggleClass("open");
+  $(".selectBox__output_timefrom").click(function(){
+    $(".selectTimefrom").toggleClass("open");
   });
 })
 
 
 //選択肢をクリックした時の動作
-$('.selectBox__selectorItem').on('click', function () {
+$('.selectBox__selectortimefrom').on('click', function () {
   const selectVal = $(this).data('select');
   const selectText = $(this).text();
-  $(this).parent('.selectBox__selector').prev('.selectBox__output_time').text(selectText);
+  $(this).parent('.selectBox__selector').prev('.selectBox__output_timefrom').text(selectText);
   $(this).parent('.selectBox__selector').slideUp();
-  $(this).parents('.selectBox__output_time').slideDown();
+  $(this).parents('.selectBox__output_timefrom').slideDown();
   $(this).parent('.selectBox__selector').next('select').val(selectVal);
+  $(".selectBox__output_timefrom").toggleClass("open");
+});
+
+/*-------------------------
+select 時間指定to
+--------------------------*/
+//初期値
+$('.selectBox__output_timeto').each(function () {
+  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectortimeto:first-child').text()
+  $(this).text(defaultText);
+})
+
+//出力の枠をクリックした時の動作
+$('.selectBox__output_timeto').on('click', function (e) {
+  e.stopPropagation();
+  if ($(this).hasClass('open')) {
+    $(this).next('.selectBox__selector').slideUp();
+  } else {
+    $(this).next('.selectBox__selector').slideDown();
+  }
+  $(this).toggleClass('open');
+  $(".selectTimeto").toggleClass('open');
+});
+
+$(function () {
+  $(".selectBox__output_timeto").click(function(){
+    $(".selectTimeto").toggleClass("open");
+  });
+})
+
+
+//選択肢をクリックした時の動作
+$('.selectBox__selectortimeto').on('click', function () {
+  const selectVal = $(this).data('select');
+  const selectText = $(this).text();
+  $(this).parent('.selectBox__selector').prev('.selectBox__output_timeto').text(selectText);
+  $(this).parent('.selectBox__selector').slideUp();
+  $(this).parents('.selectBox__output_timeto').slideDown();
+  $(this).parent('.selectBox__selector').next('select').val(selectVal);
+  $(".selectBox__output_timeto").toggleClass("open");
 });
 

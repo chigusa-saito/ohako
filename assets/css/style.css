@@ -563,6 +563,10 @@ section.event{
   padding-top: 4rem;
   padding-bottom: 9rem;
   background-color: var(--primary-color);
+
+  iframe{
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -580,6 +584,7 @@ section.event{
       background-size: contain;
       border-radius: 3rem 0 0 3rem;
       padding-top: 1px;
+      padding-bottom: 4rem;
     }
 
     .section_title{
@@ -1729,7 +1734,8 @@ input[type="checkbox"]{
 }
 
 .selectBox__output, 
-.selectBox__output_time{
+.selectBox__output_timefrom,
+.selectBox__output_timeto{
   position: relative;
   display: flex;
   align-items: center;
@@ -1756,15 +1762,21 @@ input[type="checkbox"]{
   }
 }
 
-.selectSpace{
+.selectSpace,
+.selectTimefrom,
+.selectTimeto{
   color: #C0C0C1;
 }
 
-.selectSpace.open{
+.selectSpace.open,
+.selectTimefrom.open,
+.selectTimeto.open{
   color: var(--text-color);
 }
 
-.selectBox__output.open::after{
+.selectBox__output.open::after,
+.selectBox__output_timefrom.open::after,
+.selectBox__output_timeto.open::after{
   transform: translateY(-50%) rotate(180deg);
 }
 
@@ -1778,12 +1790,16 @@ input[type="checkbox"]{
   z-index: 10;
 }
 
-.selectBox__selectorItem{
+.selectBox__selectorItem,
+.selectBox__selectortimefrom,
+.selectBox__selectortimeto{
   width: 100%;
   padding: 2.1rem 1.5rem;
 }
 
-.selectBox__selectorItem:hover{
+.selectBox__selectorItem:hover,
+.selectBox__selectortimefrom:hover,
+.selectBox__selectortimeto:hover{
   background-color: #EDD99A;
 }
 /* /select */
@@ -1804,6 +1820,17 @@ input[type="checkbox"]{
   width: 100%;
   height: max(6.5rem, 65px);
 
+  p{
+    width: 100%;
+    height: max(6.5rem, 65px);  
+
+    span{
+      display: block;
+      width: 100%;
+      height: max(6.5rem, 65px);  
+    }
+  }
+
   &::after{
     position: absolute;
     content: '(カレンダーの空き状況をご確認の上、年/月/日をご指定ください)';
@@ -1822,7 +1849,7 @@ input[type="checkbox"]{
 input[type="date"]{
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: max(6.5rem, 65px);  
   z-index: 1;
 }
 
