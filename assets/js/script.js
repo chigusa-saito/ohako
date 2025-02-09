@@ -100,12 +100,12 @@ $(function () {
 
 //選択肢をクリックした時の動作
 $('.selectBox__selectorItem').on('click', function () {
-  const selectVal = $(this).data('selectspace');
+  const selectVal = $(this).data('select');
   const selectText = $(this).text();
   $(this).parent('.selectBox__selector').prev('.selectBox__output').text(selectText);
   $(this).parent('.selectBox__selector').slideUp();
   $(this).parents('.selectBox__output').slideDown();
-  $(this).parent('.selectBox__selector').next('selectspace').val(selectVal);
+  $(this).parent('.selectBox__selector').next('select').val(selectVal);
   $(".selectSpace").addClass('open');
 });
 
