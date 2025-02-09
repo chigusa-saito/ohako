@@ -81,33 +81,33 @@ select space指定
 // })
 
 //出力の枠をクリックした時の動作
-$('.selectBox__output').on('click', function (e) {
-  e.stopPropagation();
-  if ($(this).hasClass('open')) {
-    $(this).next('.selectBox__selector').slideUp();
-  } else {
-    $(this).next('.selectBox__selector').slideDown();
-  }
-  $(this).toggleClass('open');
-  $(".selectSpace").toggleClass('open');
-});
+// $('.selectBox__output').on('click', function (e) {
+//   e.stopPropagation();
+//   if ($(this).hasClass('open')) {
+//     $(this).next('.selectBox__selector').slideUp();
+//   } else {
+//     $(this).next('.selectBox__selector').slideDown();
+//   }
+//   $(this).toggleClass('open');
+//   $(".selectSpace").toggleClass('open');
+// });
 
-$(function () {
-  $(".selectBox__output").click(function(){
-    $(".selectSpace").toggleClass("open");
-  });
-})
+// $(function () {
+//   $(".selectBox__output").click(function(){
+//     $(".selectSpace").toggleClass("open");
+//   });
+// })
 
 //選択肢をクリックした時の動作
-$('.selectBox__selectorItem').on('click', function () {
-  const selectVal = $(this).data('select');
-  const selectText = $(this).text();
-  $(this).parent('.selectBox__selector').prev('.selectBox__output').text(selectText);
-  $(this).parent('.selectBox__selector').slideUp();
-  $(this).parents('.selectBox__output').slideDown();
-  $(this).parent('.selectBox__selector').next('select').val(selectVal);
-  $(".selectSpace").addClass('open');
-});
+// $('.selectBox__selectorItem').on('click', function () {
+//   const selectVal = $(this).data('select');
+//   const selectText = $(this).text();
+//   $(this).parent('.selectBox__selector').prev('.selectBox__output').text(selectText);
+//   $(this).parent('.selectBox__selector').slideUp();
+//   $(this).parents('.selectBox__output').slideDown();
+//   $(this).parent('.selectBox__selector').next('select').val(selectVal);
+//   $(".selectSpace").addClass('open');
+// });
 
 /*-------------------------
 select 時間指定from
@@ -225,3 +225,40 @@ $('a[href^="#"]').click(function(){
   return false;
 });
 
+
+
+$(".custom-select").each(function() {
+  var classes = $(this).attr("class"),
+      id      = $(this).attr("id"),
+      name    = $(this).attr("name");
+  var template =  '<div class="' + classes + '">';
+      template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+      template += '<div class="custom-options">';
+      $(this).find("option").each(function() {
+        template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+      });
+  template += '</div></div>';
+  
+  $(this).wrap('<div class="custom-select-wrapper"></div>');
+  $(this).hide();
+  $(this).after(template);
+});
+$(".custom-option:first-of-type").hover(function() {
+  $(this).parents(".custom-options").addClass("option-hover");
+}, function() {
+  $(this).parents(".custom-options").removeClass("option-hover");
+});
+$(".custom-select-trigger").on("click", function() {
+  $('html').one('click',function() {
+    $(".custom-select").removeClass("opened");
+  });
+  $(this).parents(".custom-select").toggleClass("opened");
+  event.stopPropagation();
+});
+$(".custom-option").on("click", function() {
+  $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+  $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+  $(this).addClass("selection");
+  $(this).parents(".custom-select").removeClass("opened");
+  $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+});
