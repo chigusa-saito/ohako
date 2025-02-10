@@ -71,119 +71,91 @@ jQuery(function() {
     });
 });
 
+
 /*-------------------------
 select space指定
 --------------------------*/
-//初期値
-// $('.selectBox__output').each(function () {
-//   const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectorItem:first-child').text()
-//   $(this).text(defaultText);
-// })
-
-//出力の枠をクリックした時の動作
-$('.selectBox__output').on('click', function (e) {
-  e.stopPropagation();
-  if ($(this).hasClass('open')) {
-    $(this).next('.selectBox__selector').slideUp();
-  } else {
-    $(this).next('.selectBox__selector').slideDown();
-  }
-  $(this).toggleClass('open');
-  $(".selectSpace").toggleClass('open');
+$(".custom-select").each(function() {
+  var classes = $(this).attr("class"),
+      id      = $(this).attr("id"),
+      name    = $(this).attr("name");
+  var template =  '<div class="' + classes + '">';
+     template += '<span class="custom-select-trigger">' + "(3つの中からお選びください)"  + '</span>';
+      template += '<div class="custom-options">';
+      
+      $(this).find("option").each(function() {
+        template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+      });
+  template += '</div></div>';
+  
+  $(this).wrap('<div class="custom-select-wrapper"></div>');
+  $(this).hide();
+  $(this).after(template);
 });
-
-$(function () {
-  $(".selectBox__output").click(function(){
-    $(".selectSpace").toggleClass("open");
+$(".custom-option:first-of-type").hover(function() {
+  $(this).parents(".custom-options").addClass("option-hover");
+}, function() {
+  $(this).parents(".custom-options").removeClass("option-hover");
+});
+$(".custom-select-trigger").on("click", function() {
+  $('html').one('click',function() {
+    $(".custom-select").removeClass("opened");
   });
-})
-
-//選択肢をクリックした時の動作
-$('.selectBox__selectorItem').on('click', function () {
-  const selectVal = $(this).data('selectspace');
-  const selectText = $(this).text();
-  $(this).parent('.selectBox__selector').prev('.selectBox__output').text(selectText);
-  $(this).parent('.selectBox__selector').slideUp();
-  $(this).parents('.selectBox__output').slideDown();
-  $(this).parent('.selectBox__selector').next('selectspace').val(selectVal);
-  $(".selectSpace").addClass('open');
+  $(this).parents(".custom-select").toggleClass("opened");
+  event.stopPropagation();
 });
-
-/*-------------------------
-select 時間指定for
---------------------------*/
-//初期値
-$('.selectBox__output_timefor').each(function () {
-  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectortimefor:first-child').text()
-  $(this).text(defaultText);
-})
-
-//出力の枠をクリックした時の動作
-$('.selectBox__output_timefor').on('click', function (e) {
-  e.stopPropagation();
-  if ($(this).hasClass('open')) {
-    $(this).next('.selectBox__selector').slideUp();
-  } else {
-    $(this).next('.selectBox__selector').slideDown();
-  }
-  $(this).toggleClass('open');
-  $(".selectTimefor").toggleClass('open');
-});
-
-$(function () {
-  $(".selectBox__output_timefor").click(function(){
-    $(".selectTimefor").toggleClass("open");
-  });
-})
-
-//選択肢をクリックした時の動作
-$('.selectBox__selectortimefor').on('click', function () {
-  const selectVal = $(this).data('selecttimefor');
-  const selectText = $(this).text();
-  $(this).parent('.selectBox__selector').prev('.selectBox__output_timefor').text(selectText);
-  $(this).parent('.selectBox__selector').slideUp();
-  $(this).parents('.selectBox__output_timefor').slideDown();
-  $(this).parent('.selectBox__selector').next('selecttimefor').val(selectVal);
-  $(".selectBox__output_timefor").toggleClass('open');
+$(".custom-option").on("click", function() {
+  $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+  $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+  $(this).addClass("selection");
+  $(this).parents(".custom-select").removeClass("opened");
+  $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
 });
 
 
 /*-------------------------
-select 時間指定to
+select time指定
 --------------------------*/
-//初期値
-$('.selectBox__output_timeto').each(function () {
-  const defaultText = $(this).next('.selectBox__selector').children('.selectBox__selectortimeto:first-child').text()
-  $(this).text(defaultText);
-})
-
-//出力の枠をクリックした時の動作
-$('.selectBox__output_timeto').on('click', function (e) {
-  e.stopPropagation();
-  if ($(this).hasClass('open')) {
-    $(this).next('.selectBox__selector').slideUp();
-  } else {
-    $(this).next('.selectBox__selector').slideDown();
-  }
-  $(this).toggleClass('open');
-  $(".selectTimeto").toggleClass('open');
+$(".custom-select-time").each(function() {
+  var classes = $(this).attr("class"),
+      id      = $(this).attr("id"),
+      name    = $(this).attr("name");
+  var template =  '<div class="' + classes + '">';
+      // template += '<span class="custom-select-trigger">';
+      $(this).find("option").each(function(num) {
+        if(num==0){
+        template += '<span class="custom-select-trigger-time ' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+      }});
+    //  template += '<span class="custom-select-trigger">' + "(3つの中からお選びください)"  + '</span>';
+      template += '<div class="custom-options">';
+      
+      $(this).find("option").each(function() {
+        template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+      });
+  template += '</div></div>';
+  
+  $(this).wrap('<div class="custom-select-wrapper"></div>');
+  $(this).hide();
+  $(this).after(template);
 });
-
-$(function () {
-  $(".selectBox__output_timeto").click(function(){
-    $(".selectTimeto").toggleClass("open");
+$(".custom-option:first-of-type").hover(function() {
+  $(this).parents(".custom-options").addClass("option-hover");
+}, function() {
+  $(this).parents(".custom-options").removeClass("option-hover");
+});
+$(".custom-select-trigger-time").on("click", function() {
+  $('html').one('click',function() {
+    $(".custom-select-time").removeClass("opened");
   });
-})
-
-//選択肢をクリックした時の動作
-$('.selectBox__selectortimeto').on('click', function () {
-  const selectVal = $(this).data('selecttimeto');
-  const selectText = $(this).text();
-  $(this).parent('.selectBox__selector').prev('.selectBox__output_timeto').text(selectText);
-  $(this).parent('.selectBox__selector').slideUp();
-  $(this).parents('.selectBox__output_timeto').slideDown();
-  $(this).parent('.selectBox__selector').next('selecttimeto').val(selectVal);
-  $(".selectBox__output_timeto").toggleClass('open');
+  $(this).parents(".custom-select-time").toggleClass("opened");
+  event.stopPropagation();
+});
+$(".custom-option").on("click", function() {
+  $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+  $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+  $(this).addClass("selection");
+  $(this).parents(".custom-select-time").removeClass("opened");
+  $(this).parents(".custom-select-time").find(".custom-select-trigger-time").text($(this).text());
 });
 
 
@@ -224,4 +196,3 @@ $('a[href^="#"]').click(function(){
   $("html, body").animate({scrollTop:position},  "swing");
   return false;
 });
-

@@ -1,11 +1,8 @@
 <?php
 
-// サムネイルの表示
-add_theme_support( 'post-thumbnails' );
-
-
 // カスタムフィールド
 // プライバシーポリシーで使用する
+// contact7
 
 function get_privacypolicy() {
   $page_obj = get_page_by_path( 'contact' );
