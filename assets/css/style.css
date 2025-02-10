@@ -1960,104 +1960,110 @@ input[type="checkbox"]{
 
 
 /* select */
-.selectBox{
+/** Custom Select **/
+.custom-select-wrapper {
   position: relative;
+  display: inline-block;
   width: 100%;
-  height: max(6.5rem, 65px);
+  user-select: none;
 }
+  .custom-select-wrapper select {
+    display: none;
+  }
+  .custom-select, 
+  .custom-select-time {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    z-index: 100;
+  }
+    .custom-select-trigger, 
+    .custom-select-trigger-time {
+      position: relative;
+      display: block;
+      width: 100%;
+      color: var(--text-color);
+      background-color: var(--gray-color);
+      border-radius: .5rem;
+      padding: 2.1rem 1.5rem;
+      cursor: pointer;
+      transition: all .5s;
 
-.selectBox select{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.selectBox__output, 
-.selectBox__output_timefrom,
-.selectBox__output_timeto{
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  border-radius: .5rem;
-  background-color: var(--gray-color);
-  padding: 2.1rem 1.5rem;
-  transition: all .5s;
-  z-index: 2;
-
-  &::after{
+      &:hover{
+        background-color: #EDD99A;
+      }    
+    }
+      .custom-select-trigger-time:after, 
+      .custom-select-trigger:after {
+        position: absolute;
+        content: '▼';
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1.5rem;
+        color: var(--text-color);
+      }
+      .custom-select.opened .custom-select-trigger:after, 
+      .custom-select.opened .custom-select-trigger-time:after, 
+      .custom-select-time.opened .custom-select-trigger:after, 
+      .custom-select-time.opened .custom-select-trigger-time:after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+  .custom-options {
     position: absolute;
-    content: '▼';
-    top: 50%;
-    transform: translateY(-50%);
-    right: 1.5rem;
+    display: block;
+    width: 100%;
     color: var(--text-color);
+    background-color: var(--gray-color);
+    border-radius: .5rem;
+    /* padding: 2.1rem 1.5rem; */
+    transition: all .5s;
+  
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-15px);
   }
-
-  &:hover{
-    background-color: #EDD99A;
+  .custom-select-time.opened .custom-options, 
+  .custom-select.opened .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
   }
-}
+    .custom-options:before {
+      position: absolute;
+      content: '▼';
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1.5rem;
+      color: var(--text-color);
+  }
+    .option-hover:before {
+      background-color: #EDD99A;
+    }
+    .custom-option {
+      position: relative;
+      display: block;
+      width: 100%;
+      color: var(--text-color);
+      background-color: var(--gray-color);
+      border-radius: .5rem;
+      padding: 2.1rem 1.5rem;
+      transition: all .5s;
+      cursor: pointer;
+    }
+    .custom-option:first-of-type {
+      border-radius: .5rem .5rem 0 0;
+    }
+    .custom-option:last-of-type {
+      border-bottom: 0;
+      border-radius: 0 0 .5rem .5rem;
+    }
+    .custom-option:hover,
+    .custom-option.selection {
+      background: #EDD99A;
+    }
 
-/* スペースの時 */
-.selectSpace{
-  color: #C0C0C1;
-}
-
-.selectSpace.open,
-.selectTimefrom.open,
-.selectTimeto.open{
-  color: var(--text-color);
-}
-
-.selectBox__output.open::after,
-.selectBox__output_timefrom.open::after,
-.selectBox__output_timeto.open::after{
-  transform: translateY(-50%) rotate(180deg);
-}
-
-/* 時間選択の時 */
-.selectTimefrom, .selectTimeto{
-  color: #C0C0C1;
-}
-
-.selectTimefrom.open, .selectTimeto.open{
-  color: var(--text-color);
-}
-
-.selectBox__output_timefrom.open::after{
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.selectBox__output_timeto.open::after{
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.selectBox__selector{
-  display: none;
-  position: absolute;
-  left: 0;
-  top: calc(100% - 1px);
-  width: 100%;
-  background-color: var(--gray-color);
-  z-index: 10;
-}
-
-.selectBox__selectorItem, 
-.selectBox__selectortimefrom, 
-.selectBox__selectortimeto{
-  width: 100%;
-  padding: 2.1rem 1.5rem;
-}
-
-.selectBox__selectorItem:hover, 
-.selectBox__selectortimefrom:hover, 
-.selectBox__selectortimeto:hover{
-  background-color: #EDD99A;
-}
 
 /* firefoxでデフォルトのselectを消す */
 select{
@@ -2073,6 +2079,16 @@ select{
 	text-overflow: ""; /*Firefox用*/
 }
 /* /select */
+
+.timeWrapper p:first-child{
+  position: relative;
+  z-index: 100;
+}
+
+.timeWrapper p:last-child{
+  position: relative;
+  z-index: 1;
+}
 
 .tilde{
   text-align: center;
@@ -2283,19 +2299,6 @@ input[type="button"]:focus {
   }
   
   /* select */    
-  .selectBox__output, 
-  .selectBox__output_timefor,
-  .selectBox__output_timeto{
-    padding: 2.1rem 2.6rem;
-  }
-    
-  /* スペースの時 */
-
-  .selectBox__selectorItem, 
-  .selectBox__selectortimefor, 
-  .selectBox__selectortimeto{
-    padding: 2.1rem 2.6rem;
-  }
 
   /* 時間選択の時 */
 
@@ -2393,104 +2396,3 @@ footer{
     }
   }
 }
-
-
-
-
-/** Custom Select **/
-.custom-select-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  user-select: none;
-}
-  .custom-select-wrapper select {
-    display: none;
-  }
-  .custom-select {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    z-index: 100;
-  }
-    .custom-select-trigger {
-      position: relative;
-      display: block;
-      width: 100%;
-      color: var(--text-color);
-      background-color: var(--gray-color);
-      border-radius: .5rem;
-      padding: 2.1rem 1.5rem;
-      cursor: pointer;
-      transition: all .5s;
-
-      &:hover{
-        background-color: #EDD99A;
-      }    
-    }
-      .custom-select-trigger:after {
-        position: absolute;
-        content: '▼';
-        top: 50%;
-        transform: translateY(-50%);
-        right: 1.5rem;
-        color: var(--text-color);
-      }
-      .custom-select.opened .custom-select-trigger:after {
-        transform: translateY(-50%) rotate(180deg);
-      }
-  .custom-options {
-    position: absolute;
-    display: block;
-    width: 100%;
-    color: var(--text-color);
-    background-color: var(--gray-color);
-    border-radius: .5rem;
-    /* padding: 2.1rem 1.5rem; */
-    transition: all .5s;
-  
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-15px);
-  }
-  .custom-select.opened .custom-options {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transform: translateY(0);
-  }
-    .custom-options:before {
-      position: absolute;
-      content: '▼';
-      top: 50%;
-      transform: translateY(-50%);
-      right: 1.5rem;
-      color: var(--text-color);
-  }
-    .option-hover:before {
-      background-color: #EDD99A;
-    }
-    .custom-option {
-      position: relative;
-      display: block;
-      width: 100%;
-      color: var(--text-color);
-      background-color: var(--gray-color);
-      border-radius: .5rem;
-      padding: 2.1rem 1.5rem;
-      transition: all .5s;
-      cursor: pointer;
-    }
-    .custom-option:first-of-type {
-      border-radius: .5rem .5rem 0 0;
-    }
-    .custom-option:last-of-type {
-      border-bottom: 0;
-      border-radius: 0 0 .5rem .5rem;
-    }
-    .custom-option:hover,
-    .custom-option.selection {
-      background: #EDD99A;
-    }
-
